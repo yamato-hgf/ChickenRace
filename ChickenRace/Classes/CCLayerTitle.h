@@ -10,7 +10,11 @@
 #import "cocos2d.h"
 
 @interface CCLayerTitle : CCLayer {
-    
+	CCSprite *start_button;
 }
++(id)layerTitle;
+// returns a CCScene that contains the HelloWorldLayer as the only child
++(CCScene *) scene;
+-(void) dispTitle;
 
 @end

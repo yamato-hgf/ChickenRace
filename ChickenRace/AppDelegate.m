@@ -9,14 +9,22 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "IntroLayer.h"
+#import "CCLayerLogo.h"
+#import "CCLayerGame.h"
+
+//#import "AdViewController.h"
 
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
 
+BOOL isRetinaDisplay_;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //gamecenterのプレイヤーを取得
+ //   [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
+    
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -51,8 +59,7 @@
 //	[director setProjection:kCCDirectorProjection3D];
 
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
-	if( ! [director_ enableRetinaDisplay:YES] )
-		CCLOG(@"Retina Display Not supported");
+	isRetinaDisplay_ = [director_ enableRetinaDisplay:YES];
 
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
@@ -73,7 +80,7 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [IntroLayer scene]]; 
+	[director_ pushScene: [CCLayerGame scene]]; 
 
 	
 	// Create a Navigation Controller with the Director
@@ -86,7 +93,12 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-	
+/*
+    // 広告
+    adViewController = [[AdViewController alloc] init];
+    [navController_.view addSubview:adViewController.view];
+    [adViewController startAds];
+*/		
 	return YES;
 }
 
@@ -147,6 +159,13 @@
 	[navController_ release];
 
 	[super dealloc];
+}
+
++ (float) getScaleBase
+{
+	if( isRetinaDisplay_ )
+		return 1;
+	return 0.5f;
 }
 @end
 
