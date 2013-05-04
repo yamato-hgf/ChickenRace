@@ -23,7 +23,7 @@ BOOL isRetinaDisplay_;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //gamecenterのプレイヤーを取得
- //   [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
+   [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
     
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
