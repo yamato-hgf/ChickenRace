@@ -162,6 +162,8 @@
 		DDCE66D1171A057E00E1D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66D0171A057E00E1D457 /* main.m */; };
 		DDCE66D4171A057E00E1D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66D3171A057E00E1D457 /* AppDelegate.m */; };
 		DDCE66EF171A466300E1D457 /* CCLayerTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66EE171A466300E1D457 /* CCLayerTitle.m */; };
+		DDE793FE179591F0008504A0 /* IAdLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE793FD179591F0008504A0 /* IAdLayer.m */; };
+		DDE79400179592A2008504A0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE793FF179592A2008504A0 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +460,9 @@
 		DDCE66D3171A057E00E1D457 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DDCE66ED171A466300E1D457 /* CCLayerTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerTitle.h; sourceTree = "<group>"; };
 		DDCE66EE171A466300E1D457 /* CCLayerTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerTitle.m; sourceTree = "<group>"; };
+		DDE793FC179591F0008504A0 /* IAdLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAdLayer.h; sourceTree = "<group>"; };
+		DDE793FD179591F0008504A0 /* IAdLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAdLayer.m; sourceTree = "<group>"; };
+		DDE793FF179592A2008504A0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE79400179592A2008504A0 /* iAd.framework in Frameworks */,
 				DDCB4A0D173FD65900162812 /* Twitter.framework in Frameworks */,
 				DDCB4A0C173FD63E00162812 /* Accounts.framework in Frameworks */,
 				DDCE6549171A057B00E1D457 /* QuartzCore.framework in Frameworks */,
@@ -515,6 +521,7 @@
 		DDCE653C171A057B00E1D457 = {
 			isa = PBXGroup;
 			children = (
+				DDE793FF179592A2008504A0 /* iAd.framework */,
 				DDCE655A171A057B00E1D457 /* ChickenRace */,
 				DDCE6547171A057B00E1D457 /* Frameworks */,
 				DDCE6546171A057B00E1D457 /* Products */,
@@ -929,6 +936,7 @@
 		DDCE66E6171A460100E1D457 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DDE793FB179591F0008504A0 /* iAd */,
 				DDB2D6EE1744361A002DF131 /* CCLayerExtension.h */,
 				DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */,
 				DDCE66ED171A466300E1D457 /* CCLayerTitle.h */,
@@ -939,6 +947,15 @@
 				DDC0424E171B47E80018B49C /* CCLayerLogo.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		DDE793FB179591F0008504A0 /* iAd */ = {
+			isa = PBXGroup;
+			children = (
+				DDE793FC179591F0008504A0 /* IAdLayer.h */,
+				DDE793FD179591F0008504A0 /* IAdLayer.m */,
+			);
+			path = iAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1145,6 +1162,7 @@
 				DDC0424C171A998C0018B49C /* CCLayerGame.m in Sources */,
 				DDC0424F171B47E80018B49C /* CCLayerLogo.m in Sources */,
 				DDB2D6F01744361A002DF131 /* CCLayerExtension.m in Sources */,
+				DDE793FE179591F0008504A0 /* IAdLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

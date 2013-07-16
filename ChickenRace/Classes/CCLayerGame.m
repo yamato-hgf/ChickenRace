@@ -10,6 +10,7 @@
 #import "CCLayerGame.h"
 #import "CCLayerTitle.h"
 #import "GameKit/GameKit.h"
+#import "IAdLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -103,6 +104,11 @@ static CCLayerGame* instance;
 
         cclInfo = [CCLayer node];
         [self addChild:cclInfo z:1];
+        
+        IAdLayer *adLayer = [IAdLayer nodeWithOrientation:kAdOrientationPortrait
+                                                 position:kAdPositionTop];
+        
+        [self addChild:adLayer];
 
         [self schedule:@selector(inputUpdate:)];
 	}
