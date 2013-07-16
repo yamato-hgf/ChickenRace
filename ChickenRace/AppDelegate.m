@@ -12,13 +12,13 @@
 #import "CCLayerLogo.h"
 #import "CCLayerGame.h"
 
-//#import "AdViewController.h"
-
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
 
 BOOL isRetinaDisplay_;
+float scaleBase_;
+float scaleFactor_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -60,6 +60,15 @@ BOOL isRetinaDisplay_;
 
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	isRetinaDisplay_ = [director_ enableRetinaDisplay:YES];
+	if(isRetinaDisplay_) {
+		scaleBase_ = director_.winSize.height/ 480;
+		scaleFactor_ = 0.5f;
+	}
+	else {
+		scaleBase_ = director_.winSize.height/ 960;
+		scaleFactor_ = 1;
+	}
+//    [director_ setContentScaleFactor: scaleFactor_];
 
 	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
@@ -93,12 +102,7 @@ BOOL isRetinaDisplay_;
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-/*
-    // 広告
-    adViewController = [[AdViewController alloc] init];
-    [navController_.view addSubview:adViewController.view];
-    [adViewController startAds];
-*/		
+
 	return YES;
 }
 
@@ -163,9 +167,12 @@ BOOL isRetinaDisplay_;
 
 + (float) getScaleBase
 {
-	if( isRetinaDisplay_ )
-		return 1;
-	return 0.5f;
+	return scaleBase_;
+}
+
++ (float) getScaleFactor
+{
+	return scaleFactor_;
 }
 @end
 

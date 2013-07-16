@@ -8,14 +8,35 @@
 
 #import <GameKit/GameKit.h>
 
+#import "CCLayerExtension.h"
 #import "cocos2d.h"
 @class CCLayerTitle;
 
-@interface CCLayerGame : CCLayer <GKAchievementViewControllerDelegate,
+#define NUM_OF_GAMES 3
+
+typedef enum PartTypes : NSUInteger {
+	PartTypeEyeL,
+	PartTypeEyeR,
+	PartTypeHead,
+	PartTypeFace,
+	PartTypeChin,
+	PartTypeTail,
+	PartTypeMax
+} PartTypes;
+
+@interface PartCtrl: NSObject {
+}
+-(id) initWithParam:(CCSprite*)sprite_ type:(PartTypes)type_;
+@property (assign) PartTypes type;
+@property (assign) CCSprite *sprite;
+@end
+
+@interface CCLayerGame : CCLayerExtension <GKAchievementViewControllerDelegate,
     GKLeaderboardViewControllerDelegate>
 {
-	CCSprite *ccsDogBody;
-	CCSprite *ccsDogHead;
+	CCLayer *layerUnit;
+
+	NSMutableArray *unitCtrls;
 
 	CCSprite *ccsTutorial;
 	CCLayerColor *cclFade;
@@ -24,25 +45,25 @@
 	CCSprite *ccsTouch;
 	bool isDispIzaTouch;
 
-	CCSprite* ccsDogAgo;
-	CCSprite* ccsDogFace;
+	CCSprite *ccsFight;
 
 	CCSprite* ccsResult;
 	CCSprite* ccsRetry;
 	CCSprite* ccsNext;
 
-	CCSprite* ccsPressedButton;
-	CGRect pressedButtonRect;
-
     CCLayerTitle *layerTitle;
+    
+    CCLayer *cclInfo;
+	CCLayer *cclSpark;
 
 	CCLabelTTF* cclScore;
 	CCLabelTTF* cclResult;
-	CCMenu* ccmMain;
 
-    float waitForBiteCount;
+	float stateTimeCount;
+
+    float waitForBiteTime;
     float biteHeadHeightBegin;
-    float biteAgoHeightBegin;
+    float biteChinHeightBegin;
 
 	CGPoint touchPoint;
     float inputCount;
@@ -50,8 +71,13 @@
 	bool isTouchMoved;
 	bool isTouchEnd;
 
+    NSDate *startTime;
+	NSTimeInterval elapsedTime;
+
 	float avoidTime;
-	float score;
+
+	int gameCount;
+	int scores[NUM_OF_GAMES];
 
 	enum ResultType {
 		None,
@@ -70,5 +96,7 @@
 +(CCLayerGame*) get;
 
 -(void) gameStart;
+
+-(void) createDogStand;
 
 @end

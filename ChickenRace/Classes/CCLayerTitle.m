@@ -9,6 +9,9 @@
 #import "CCLayerTitle.h"
 #import "CCLayerGame.h"
 #import "AppDelegate.h"
+#import "GameKit/GameKit.h"
+#import "Twitter/Twitter.h"
+#import "Accounts/Accounts.h"
 
 #pragma mark - CCLayerTitle
 
@@ -17,101 +20,199 @@ CCSprite *title_buttons;
 
 @implementation CCLayerTitle
 
-// Helper class method that creates a Scene with the CCLayerGame as the only child.
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	CCLayerTitle *layer = [CCLayerTitle node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
-
 -(id)init {
 	self = [super init];
-
+    flagCanTweet = true;
 	return self;
 }
 
 +(id)layerTitle{
     return  [[[self alloc] init] autorelease];
 }
+
 //
 -(void) onEnter
 {
 	[super onEnter];
+
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init]; // 追加
+	ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter]; // 追加
+ 
+    [accountStore requestAccessToAccountsWithType:twitterAccountType  // 追加
+                            withCompletionHandler:^(BOOL granted, NSError *error)  // 追加
+     { // 追加
+         if (!granted) { // 追加
+             NSLog(@"ユーザーがアクセスを拒否しました。"); // 追加
+         }else{ // 追加
+             NSLog(@"ユーザーがアクセスを許可しました。"); // 追加
+         } // 追加
+     }]; // 追加
+#if 0
+	/* iOS5以降の場合にアカウント情報変更通知を受ける。 */
+	if([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0f)  {
+        
+	    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onCheckTweetStatus) name:ACAccountStoreDidChangeNotification object:nil];
+	    [self performSelector:@selector(onCheckTweetStatus)];
+	}    
+#endif
 	[self dispTitle];
+}
+
+-(void) setFlagCanTweet:(BOOL)flag
+{
+	flagCanTweet = flag;
+}
+
+- (void) onCheckTweetStatus
+{
+    /* ツイート可能かどうかをチェックする。 */
+    if ([TWTweetComposeViewController canSendTweet]) {
+        /* ここでツイート可能判定時の処理を記述する。ボタンの有効化や可視化など。*/
+// 	      [self setFlagCanTweet:YES];
+// 	      [self.btTweet setAlpha:1.0f];
+    }
+    else  {
+        /* ここでツイート不可判定時の処理を記述する。ボタンの無効化や不可視化など。 */
+//	       [self setFlagCanTweet:NO];
+//	       [self.btTweet setAlpha:0.3f];
+    }
 }
 
 -(void) dispTitle
 {
 	// ask director for the window size
 	CGSize size = [[CCDirector sharedDirector] winSize];
-	float scale = [AppController getScaleBase];
+	float scaleBase = [AppController getScaleBase];
+	float scaleFactor = [AppController getScaleFactor];
     
     title_logo = [CCSprite spriteWithFile:@"title_logo.png"];
-	title_logo.position = ccp(size.width/2, size.height - title_logo.contentSize.height * (0.5f * scale));
-    title_logo.scale = scale;
+	title_logo.position = ccp(size.width/2, size.height - 88 - title_logo.contentSize.height * (0.5f * scaleBase));
+    title_logo.scale = scaleBase;
   
 	// add the label as a child to this Layer
 	[self addChild: title_logo];
     
-    start_button = [CCSprite spriteWithFile:@"start_button.png"];
-	start_button.position = ccp(size.width/2, 88);
-    start_button.scale = scale;
+    ccsStartButton = [CCSprite spriteWithFile:@"start_button.png"];
+	ccsStartButton.position = ccp(size.width/2, ccsStartButton.contentSize.height * (0.5f * scaleBase));
+    ccsStartButton.scale = scaleBase;
 
-    id sclMin = [CCEaseInOut actionWithAction: [CCScaleTo actionWithDuration:0.5f scale:scale * 0.9f] rate:3 ];
-    id sclMax = [CCEaseInOut actionWithAction: [CCScaleTo actionWithDuration:0.5f scale:scale] rate:3 ];
-	[start_button runAction:[CCRepeatForever actionWithAction: [CCSequence actions: sclMin, sclMax, nil] ] ];
+	[ccsStartButton runAction: 
+		[CCRepeatForever actionWithAction: 
+			[CCSequence actions: 
+				[CCEaseInOut actionWithAction: 
+					[CCScaleTo actionWithDuration:0.5f scale:scaleBase * 0.9f] 
+					rate:3 
+				], 
+				[CCEaseInOut actionWithAction: 
+					[CCScaleTo actionWithDuration:0.5f scale:scaleBase] 
+					rate:3 
+				], 
+				nil
+			] 
+		]
+	];
 
 	// add the label as a child to this Layer
-	[self addChild: start_button];
+	[self addChild: ccsStartButton];
+
+	//
+	// Leaderboards and Achievements
+	//
+	ccsTweetButton = [CCSprite spriteWithFile:@"tweet.png"];
+    [ccsTweetButton setPosition:ccp(size.width/6, size.height-88*scaleFactor)];
+    [ccsTweetButton setScale:scaleBase];
+	[self addChild:ccsTweetButton];
     
-    title_buttons = [CCSprite spriteWithFile:@"title_buttons.png"];
-	title_buttons.position = ccp(size.width/2, size.height/2 + 16);
-    title_buttons.scale = scale;
-
-	// add the label as a child to this Layer
-	[self addChild: title_buttons];
-
+	ccsRankingButton = [CCSprite spriteWithFile:@"ranking.png"];
+    [ccsRankingButton setPosition:ccp(size.width/6*5, size.height-88*scaleFactor)];
+    [ccsRankingButton setScale:scaleBase];
+	[self addChild:ccsRankingButton];
+    
 	self.isTouchEnabled = YES;		
 }
 
-// スプライトのタッチ判定用メソッド
--(CGRect)rectForSprite:(CCSprite *)sprite {
-    float h = [sprite contentSize].height/2;
-    float w = [sprite contentSize].width/2;
-    float x = sprite.position.x - w/2;
-    float y = sprite.position.y - h/2;
-    CGRect rect = CGRectMake(x,y,w,h);return rect; 
+-(void) registerWithTouchDispatcher
+{
+    CCDirector *director = [CCDirector sharedDirector];
+    [[director touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 // スプライトがタッチされた場合の処理
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch =[touches anyObject];
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    CGPoint location =[touch locationInView:[touch view]];
+    location = [[CCDirector sharedDirector] convertToGL:location];
+
+    [self touchBeganButton:ccsStartButton touchLocation:location];
+    [self touchBeganButton:ccsTweetButton touchLocation:location];
+    [self touchBeganButton:ccsRankingButton touchLocation:location];
+    return YES;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint location =[touch locationInView:[touch view]];
     location =[[CCDirector sharedDirector] convertToGL:location];
 
-    CGRect obj01Rect = [self rectForSprite:start_button];
-    if(CGRectContainsPoint(obj01Rect, location)) {
-	    //スプライト（obj01）がタッチされた場合の処理を書く
-	    start_button.visible = false;
-	    self.isTouchEnabled = NO;
+    if([self touchEndButton:ccsStartButton touchLocation:location]) {
+
         CGSize size = [[CCDirector sharedDirector] winSize];
         id riseUp = [CCEaseIn actionWithAction: [CCMoveTo actionWithDuration:0.5 position:ccp(size.width/ 2, size.height*2) ] rate:2 ];
-	    [title_logo runAction:riseUp];
-	    [title_buttons runAction:[ [riseUp copy] autorelease] ];
-	    [self scheduleOnce:@selector(startGameScene:) delay:0.5];
+	    [self runAction: [CCSequence actions: [CCDelayTime actionWithDuration:0.1], riseUp, nil]];
+	    [self scheduleOnce:@selector(startGameScene:) delay:0.6];
+    }
+
+   if([self touchEndButton:ccsTweetButton touchLocation:location isRespawn:true]) {
+
+		/* ツイート可能になっていない場合 */
+		if(!flagCanTweet)  {
+				/* UIAlertViewなどでアラート表示 */
+		}
+		/* ツイート可能な状態の場合 */
+		else {
+
+			/* ツイート画面のためのビューコントローラインスタンスを生成する。 */
+			TWTweetComposeViewController *vcTweet = [[TWTweetComposeViewController alloc] init];
+
+		        /* 初期表示文字列の指定 */
+			[vcTweet setInitialText:[NSString stringWithFormat:@"いぬ	"]];
+
+			/* ツイート結果ハンドラブロック(ツイート送信orキャンセル時の処理をここに記述) */
+			[vcTweet setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+				NSString *stringOutPut = nil;
+				switch (result) {
+					case TWTweetComposeViewControllerResultCancelled:
+						// The cancel button was tapped.
+						stringOutPut = @"ツイートをキャンセルしました。";
+						break;
+					case TWTweetComposeViewControllerResultDone:
+						// The tweet was sent.
+						stringOutPut = @"ツイートに成功しました。";
+						break;
+					default:
+						break;
+				}
+
+				// Dismiss the tweet composition view controller.
+				[vcTweet dismissModalViewControllerAnimated:YES];
+			}];
+
+			[[CCDirector sharedDirector] presentModalViewController:vcTweet animated:YES];
+			[vcTweet release];
+		}
+    }
+
+   if([self touchEndButton:ccsRankingButton touchLocation:location isRespawn:true]) {
+        GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
+       leaderboardViewController.leaderboardDelegate = [CCLayerGame get];
+	
+        AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+        [[app navController] presentModalViewController:leaderboardViewController animated:YES];
+        [leaderboardViewController release];
     }
 }
 
 -(void)startGameScene:(ccTime)dt {
+	[self removeAllChildrenWithCleanup:YES];
+    [self setPosition:ccp(0,0)];
     [[CCLayerGame get] gameStart];
 }
 

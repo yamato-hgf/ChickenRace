@@ -20,6 +20,12 @@
 		DD4CAA4E172AE5DA007A839D /* dog_bite_ago.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4CAA4B172AE5DA007A839D /* dog_bite_ago.png */; };
 		DD4CAA4F172AE5DA007A839D /* dog_bite_head.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4CAA4C172AE5DA007A839D /* dog_bite_head.png */; };
 		DD4CAA51172B7D3C007A839D /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4CAA50172B7D3C007A839D /* win.png */; };
+		DD5C8ED7177341180099C26D /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5C8ED6177341180099C26D /* flash.png */; };
+		DD7FC5DF1762DA7B005CE980 /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = DD7FC5DE1762DA7B005CE980 /* Dog */; };
+		DDB2D6F01744361A002DF131 /* CCLayerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */; };
+		DDB2E4FE1739AEFE00F0F479 /* ranking.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB2E4FC1739AEFE00F0F479 /* ranking.png */; };
+		DDB2E4FF1739AEFE00F0F479 /* tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB2E4FD1739AEFE00F0F479 /* tweet.png */; };
+		DDB2E5011739AF0F00F0F479 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB2E5001739AF0F00F0F479 /* spark.png */; };
 		DDC0424C171A998C0018B49C /* CCLayerGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0424B171A998C0018B49C /* CCLayerGame.m */; };
 		DDC0424F171B47E80018B49C /* CCLayerLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0424E171B47E80018B49C /* CCLayerLogo.m */; };
 		DDC04256171C95500018B49C /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC04251171C95500018B49C /* dog.png */; };
@@ -28,6 +34,9 @@
 		DDC04259171C95500018B49C /* title_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC04254171C95500018B49C /* title_logo.png */; };
 		DDC0425A171C95500018B49C /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC04255171C95500018B49C /* tutorial.png */; };
 		DDC0425C171C99F70018B49C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC0425B171C99F60018B49C /* background.png */; };
+		DDC90E611735C6DF00EB163A /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC90E601735C6DF00EB163A /* spark.png */; };
+		DDCB4A0C173FD63E00162812 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCB4A0A173FD61500162812 /* Accounts.framework */; };
+		DDCB4A0D173FD65900162812 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1566FF173EF6770016C9CB /* Twitter.framework */; };
 		DDCE6549171A057B00E1D457 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE6548171A057B00E1D457 /* QuartzCore.framework */; };
 		DDCE654B171A057B00E1D457 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE654A171A057B00E1D457 /* OpenGLES.framework */; };
 		DDCE654D171A057B00E1D457 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE654C171A057B00E1D457 /* OpenAL.framework */; };
@@ -156,6 +165,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1566FF173EF6770016C9CB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DD391A7E17249D4700EC52E2 /* touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch.png; sourceTree = "<group>"; };
 		DD391A81172587A500EC52E2 /* fight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fight.png; sourceTree = "<group>"; };
 		DD391A831726DF0700EC52E2 /* iza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iza.png; sourceTree = "<group>"; };
@@ -169,6 +179,13 @@
 		DD4CAA4B172AE5DA007A839D /* dog_bite_ago.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog_bite_ago.png; sourceTree = "<group>"; };
 		DD4CAA4C172AE5DA007A839D /* dog_bite_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog_bite_head.png; sourceTree = "<group>"; };
 		DD4CAA50172B7D3C007A839D /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win.png; sourceTree = "<group>"; };
+		DD5C8ED6177341180099C26D /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flash.png; path = Resources/flash.png; sourceTree = "<group>"; };
+		DD7FC5DE1762DA7B005CE980 /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dog; path = Resources/Dog; sourceTree = "<group>"; };
+		DDB2D6EE1744361A002DF131 /* CCLayerExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerExtension.h; sourceTree = "<group>"; };
+		DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerExtension.m; sourceTree = "<group>"; };
+		DDB2E4FC1739AEFE00F0F479 /* ranking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ranking.png; sourceTree = "<group>"; };
+		DDB2E4FD1739AEFE00F0F479 /* tweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweet.png; sourceTree = "<group>"; };
+		DDB2E5001739AF0F00F0F479 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		DDC0424A171A998C0018B49C /* CCLayerGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerGame.h; sourceTree = "<group>"; };
 		DDC0424B171A998C0018B49C /* CCLayerGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerGame.m; sourceTree = "<group>"; };
 		DDC0424D171B47E80018B49C /* CCLayerLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerLogo.h; sourceTree = "<group>"; };
@@ -179,6 +196,8 @@
 		DDC04254171C95500018B49C /* title_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_logo.png; sourceTree = "<group>"; };
 		DDC04255171C95500018B49C /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
 		DDC0425B171C99F60018B49C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		DDC90E601735C6DF00EB163A /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../../Design/spark.png; sourceTree = "<group>"; };
+		DDCB4A0A173FD61500162812 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		DDCE6545171A057B00E1D457 /* ChickenRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickenRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCE6548171A057B00E1D457 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DDCE654A171A057B00E1D457 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -446,6 +465,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCB4A0D173FD65900162812 /* Twitter.framework in Frameworks */,
+				DDCB4A0C173FD63E00162812 /* Accounts.framework in Frameworks */,
 				DDCE6549171A057B00E1D457 /* QuartzCore.framework in Frameworks */,
 				DDCE654B171A057B00E1D457 /* OpenGLES.framework in Frameworks */,
 				DDCE654D171A057B00E1D457 /* OpenAL.framework in Frameworks */,
@@ -464,6 +485,10 @@
 		DDC04250171C95390018B49C /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DDB2E5001739AF0F00F0F479 /* spark.png */,
+				DDB2E4FC1739AEFE00F0F479 /* ranking.png */,
+				DDB2E4FD1739AEFE00F0F479 /* tweet.png */,
+				DDC90E601735C6DF00EB163A /* spark.png */,
 				DD4CAA4A172AE5DA007A839D /* dog_bite_face.png */,
 				DD4CAA4B172AE5DA007A839D /* dog_bite_ago.png */,
 				DD4CAA4C172AE5DA007A839D /* dog_bite_head.png */,
@@ -507,6 +532,8 @@
 		DDCE6547171A057B00E1D457 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDCB4A0A173FD61500162812 /* Accounts.framework */,
+				DD1566FF173EF6770016C9CB /* Twitter.framework */,
 				DDCE6548171A057B00E1D457 /* QuartzCore.framework */,
 				DDCE654A171A057B00E1D457 /* OpenGLES.framework */,
 				DDCE654C171A057B00E1D457 /* OpenAL.framework */,
@@ -536,6 +563,8 @@
 		DDCE655B171A057C00E1D457 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD5C8ED6177341180099C26D /* flash.png */,
+				DD7FC5DE1762DA7B005CE980 /* Dog */,
 				DDC04250171C95390018B49C /* Game */,
 				DDCE655C171A057C00E1D457 /* Default.png */,
 				DDCE655E171A057C00E1D457 /* Default-Landscape~ipad.png */,
@@ -900,6 +929,8 @@
 		DDCE66E6171A460100E1D457 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DDB2D6EE1744361A002DF131 /* CCLayerExtension.h */,
+				DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */,
 				DDCE66ED171A466300E1D457 /* CCLayerTitle.h */,
 				DDCE66EE171A466300E1D457 /* CCLayerTitle.m */,
 				DDC0424A171A998C0018B49C /* CCLayerGame.h */,
@@ -992,6 +1023,12 @@
 				DD4CAA4E172AE5DA007A839D /* dog_bite_ago.png in Resources */,
 				DD4CAA4F172AE5DA007A839D /* dog_bite_head.png in Resources */,
 				DD4CAA51172B7D3C007A839D /* win.png in Resources */,
+				DDC90E611735C6DF00EB163A /* spark.png in Resources */,
+				DDB2E4FE1739AEFE00F0F479 /* ranking.png in Resources */,
+				DDB2E4FF1739AEFE00F0F479 /* tweet.png in Resources */,
+				DDB2E5011739AF0F00F0F479 /* spark.png in Resources */,
+				DD7FC5DF1762DA7B005CE980 /* Dog in Resources */,
+				DD5C8ED7177341180099C26D /* flash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,6 +1144,7 @@
 				DDCE66EF171A466300E1D457 /* CCLayerTitle.m in Sources */,
 				DDC0424C171A998C0018B49C /* CCLayerGame.m in Sources */,
 				DDC0424F171B47E80018B49C /* CCLayerLogo.m in Sources */,
+				DDB2D6F01744361A002DF131 /* CCLayerExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1207,10 @@
 				HEADER_SEARCH_PATHS = "\"ChickenRace/libs/kazmath/include\"";
 				INFOPLIST_FILE = ChickenRace/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ChickenRace/iAd\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1191,6 +1233,10 @@
 				HEADER_SEARCH_PATHS = "\"ChickenRace/libs/kazmath/include\"";
 				INFOPLIST_FILE = ChickenRace/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ChickenRace/iAd\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1212,7 +1258,7 @@
 				DDCE66DC171A057E00E1D457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		DDCE66DD171A057E00E1D457 /* Build configuration list for PBXNativeTarget "ChickenRace" */ = {
 			isa = XCConfigurationList;
@@ -1221,7 +1267,7 @@
 				DDCE66DF171A057E00E1D457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

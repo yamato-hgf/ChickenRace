@@ -46,7 +46,7 @@
         
         //iAd
         ADBannerView *tmpADView = [[ADBannerView alloc] initWithFrame:CGRectMake(0.0, winSize.height, 320.0, 50.0)];
-        tmpADView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+        tmpADView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
         self.vAds = tmpADView;
         [tmpADView release];
         self.vAds.delegate = self;
