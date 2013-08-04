@@ -38,6 +38,8 @@ typedef enum PartTypes : NSUInteger {
 
 	NSMutableArray *unitCtrls;
 
+	CCSprite *background;
+
 	CCSprite *ccsTutorial;
 	CCLayerColor *cclFade;
 

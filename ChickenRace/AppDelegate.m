@@ -19,6 +19,7 @@
 BOOL isRetinaDisplay_;
 float scaleBase_;
 float scaleFactor_;
+float adBannerSize;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

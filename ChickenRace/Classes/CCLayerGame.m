@@ -84,12 +84,10 @@ static CCLayerGame* instance;
         CGSize winSize = [[CCDirector sharedDirector] winSize];
  		float scaleBase = [AppController getScaleBase];
 
-        CCSprite *background;
-        
-        background = [CCSprite spriteWithFile:@"background.png"];
-        background.position = ccp(winSize.width/2, winSize.height/2);
+        background = [CCSprite spriteWithFile:@"Game/20110505_05.jpg"];
+        background.position = ccp(winSize.width/2, 0);
         background.scale = scaleBase;
-        background.color = ccc3(127,127,127);
+        background.anchorPoint = ccp(0.5f,0);
         // add the label as a child to this Layer
         [self addChild: background];
 
@@ -279,7 +277,7 @@ static CCLayerGame* instance;
     [self addChild:sprite];
 }
 
-- (void) createDogVite
+- (void) createDogBite
 {
     const UnitPart parts[] = {
         {1, PartTypeMax, 0, 0, "Dog/dog_body.png", ccp(0, 0), ccp(0.5f,0), 0 },
@@ -361,7 +359,7 @@ static CCLayerGame* instance;
 
 - (void) createEyeFlash:(CCNode*)parent rotation:(float)angle 
 {
-    CCSprite* sprite = [CCSprite spriteWithFile:@"flash.png"];
+    CCSprite* sprite = [CCSprite spriteWithFile:@"Game/flash.png"];
     float scaleBase = [AppController getScaleBase];
 
     CGPoint pos = parent.position;
@@ -391,8 +389,8 @@ static CCLayerGame* instance;
 
  	[self createDogStand];
    
-	ccsTutorial = [CCSprite spriteWithFile:@"tutorial.png"];
-    ccsTutorial.position = ccp(size.width/2, ccsTutorial.contentSize.height * 0.5f * scaleBase);
+	ccsTutorial = [CCSprite spriteWithFile:@"UI/tutorial.png"];
+    ccsTutorial.position = ccp(size.width/2, -50 + ccsTutorial.contentSize.height / 2 * scaleBase);
     ccsTutorial.scale = scaleBase;
     [self addChild:ccsTutorial z:2];
 
@@ -412,18 +410,31 @@ static CCLayerGame* instance;
     CGSize size = [[CCDirector sharedDirector] winSize];
 	float scaleBase = [AppController getScaleBase];
 
-	ccsIza = [CCSprite spriteWithFile:@"iza.png"];
-    ccsIza.position = ccp(size.width/2, size.height/2);
+	ccsIza = [CCSprite spriteWithFile:@"UI/iza.png"];
+    ccsIza.position = ccp(size.width/2, 160);
     ccsIza.scale = scaleBase;
+    [ccsIza runAction:
+        [CCRepeatForever actionWithAction: 
+            [CCRotateBy actionWithDuration:1 angle:90]
+        ]
+    ];
     [self addChild:ccsIza];
 
-	ccsTouch = [CCSprite spriteWithFile:@"touch.png"];
-    ccsTouch.position = ccp(size.width/2, size.height/2);
+	ccsTouch = [CCSprite spriteWithFile:@"UI/touch.png"];
+    ccsTouch.position = ccp(ccsIza.position.x, ccsIza.position.y
+                        - ([ccsIza contentSize].height / 2 * scaleBase)
+                        - ([ccsTouch contentSize].height / 2 * scaleBase));
     ccsTouch.scale = scaleBase;
 
-    id jumpUp = [CCEaseOut actionWithAction:[CCMoveBy actionWithDuration:0.5f position:ccp(0,-25)] rate:2 ];
-    id jumpDown = [CCEaseIn actionWithAction:[CCMoveBy actionWithDuration:0.5f position:ccp(0,25)] rate:2 ];
-    [ccsTouch runAction: [CCRepeatForever actionWithAction: [CCSequence actions: jumpUp, jumpDown, nil] ] ];
+    [ccsTouch runAction: 
+        [CCRepeatForever actionWithAction: 
+         [CCSequence actions:
+                [CCEaseOut actionWithAction:[CCMoveBy actionWithDuration:0.25 position:ccp(0,-8)] rate:3],
+                [CCEaseIn actionWithAction:[CCMoveBy actionWithDuration:0.25 position:ccp(0,8)] rate:3],
+                nil
+            ]
+        ]
+    ];
     [self addChild:ccsTouch];
     isDispIzaTouch = TRUE;
 }
@@ -450,13 +461,10 @@ static CCLayerGame* instance;
 
 - (void) changeReadyState: (bool) retry
 {
+    resultType = None;
+
 	[self dispIzaTouch];
-
-	resultType = None;
-
-	if(retry) {
-		[self createDogStand];   
-	}
+	[self createDogStand];   
 
 	[self unschedule:@selector(tutorialState:)];
 	[self schedule:@selector(readyState:)];	
@@ -476,10 +484,10 @@ const float waitForBiteMax = 3;
 	   	if(ccpDistance(vec, readyTouchPoint) < readyTouchRadius) {
 	   		[self hideIzaTouch];
 
-			ccsFight = [CCSprite spriteWithFile:@"fight.png"];
-            ccsFight.position = ccp(size.width/2, size.height/2);
+			ccsFight = [CCSprite spriteWithFile:@"UI/fight.png"];
+            ccsFight.position = ccp(size.width/2, (size.height- 100- ([ccsFight contentSize].height / 2) * scaleBase));
 		    ccsFight.scale = scaleBase * 4.0f;
-		    id actSclIn = [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.5f scale:scaleBase] rate:2];
+		    id actSclIn = [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase] rate:2];
 		    id actSclOut = [CCSpawn actions:[CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase * 2.f] rate:3],
 		    								[CCFadeOut actionWithDuration:0.1f], nil ];
 		    id actions = [CCSequence actions: actSclIn, [CCDelayTime actionWithDuration:1], actSclOut, nil ];
@@ -559,7 +567,7 @@ const float warningTouchRadius = 80;
         [self createEyeFlash:parent rotation:0];
         [self createEyeFlash:parent rotation:90];
 
-        [self createDogVite];
+        [self createDogBite];
 
         biteHeadHeightBegin = [self findUnitPartSpriteByType:PartTypeHead].position.y;
         biteChinHeightBegin = [self findUnitPartSpriteByType:PartTypeChin].position.y;
@@ -576,6 +584,7 @@ const float warningTouchRadius = 80;
 
 const CGPoint dogFacePoint = {-16, 96};
 const float biteDogScale = 2.0f;
+const float biteDogHeight = -64.0f;
 const float biteHeadOpenHeight = 64;
 const float biteAgoOpenHeight = -128;
 const float biteTimeSec = 0.5f;
@@ -609,19 +618,22 @@ const float slowMotionMin = 0.01f;
     rate = pow(rate, 4);
 	rate = min(max(rate, 0), 1);
 
-//	[self createDogVite];
+//	[self createDogBite];
 
 	float zoomRate = min(1, rate / biteZoomTimeRate);
-	float scaleBase = 1;
     float scaleFactor = [AppController getScaleFactor];
-	float zoom = biteDogScale * 1;
-	[layerUnit setScale: scaleBase + (zoom - scaleBase) * zoomRate];
+    float scaleBase = [AppController getScaleBase];
+    float bgScale = scaleBase * biteDogScale;
+
+//    [background setScale: scaleBase + (bgScale - scaleBase) * zoomRate];
+	[layerUnit setScale: 1 + (biteDogScale - 1) * zoomRate];
+    [layerUnit setPosition: ccp(0, biteDogHeight * zoomRate)];
 
     CCSprite* sprite = [self findUnitPartSpriteByType:PartTypeHead];
-	sprite.position = ccp(sprite.position.x, biteHeadHeightBegin - (biteHeadOpenHeight/ scaleBase * rate)*scaleFactor);
+	sprite.position = ccp(sprite.position.x, biteHeadHeightBegin - (biteHeadOpenHeight * rate)*scaleFactor);
 	
     sprite = [self findUnitPartSpriteByType:PartTypeChin];
-    sprite.position = ccp(sprite.position.x, biteChinHeightBegin - (biteAgoOpenHeight/ scaleBase * rate)*scaleFactor);
+    sprite.position = ccp(sprite.position.x, biteChinHeightBegin - (biteAgoOpenHeight * rate)*scaleFactor);
 
 	switch(resultType) {
 	case None:
@@ -668,7 +680,7 @@ const float slowMotionMin = 0.01f;
 		        ];
 		        [self addChild: cclSpark];
 
-		        CCSprite* sprite = [CCSprite spriteWithFile:@"spark.png"];
+		        CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark.png"];
 		        sprite.position = ccp(size.width/2, size.height/2-64);
 		        [sprite setAnchorPoint:ccp(0.5,0.5)];
 				[sprite setScale: scaleBase];
@@ -687,7 +699,7 @@ const float slowMotionMin = 0.01f;
 		        ];
 	            [cclSpark addChild: sprite];
 
-		        sprite = [CCSprite spriteWithFile:@"spark.png"];
+		        sprite = [CCSprite spriteWithFile:@"Game/spark.png"];
 		        sprite.position = ccp(size.width/2, size.height/2-64);
 		        [sprite setAnchorPoint:ccp(0.5,0.5)];
 				[sprite setScale: 0.75f * scaleBase];
@@ -724,6 +736,7 @@ const float slowMotionMin = 0.01f;
 
 -(void) changeResultState:(ccTime)dt {
     CGSize size = [[CCDirector sharedDirector] winSize];
+    float scaleFactor = [AppController getScaleFactor];
 	float scaleBase = [AppController getScaleBase];
 
 	cclFade = [CCLayerColor layerWithColor:ccc4(255,255,255,0)];
@@ -745,10 +758,7 @@ const float slowMotionMin = 0.01f;
 	switch(resultType) {
 	case Success:
 		{
-			ccsResult = [CCSprite spriteWithFile:@"win.png"];
-		    ccsResult.position = ccp(size.width/2, size.height/2);
-		    ccsResult.scale = scaleBase;
-		    [cclInfo addChild:ccsResult];
+			ccsResult = [CCSprite spriteWithFile:@"UI/win.png"];
 
 		    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
 		    int64_t score = (biteTimeSec+elapsedTime) *1000000;
@@ -759,39 +769,35 @@ const float slowMotionMin = 0.01f;
 		break;
 	case TooFar:
 		cclResult.string = @"「おいおい、どこへ行こうってんだ」\r\r中心から外れすぎないように！";
-        ccsResult = [CCSprite spriteWithFile:@"failed.png"];
-	    ccsResult.position = ccp(size.width/2, size.height/2);
-	    ccsResult.scale = scaleBase;
+        ccsResult = [CCSprite spriteWithFile:@"UI/failed.png"];
 	    [self createDogLauph];
-		[cclInfo addChild:ccsResult];
 	    break;
 
 	case TooFast:
 		cclResult.string = @"「このチキン野郎が！」\r\r噛みつかれるまで離しちゃダメだ！";
-		ccsResult = [CCSprite spriteWithFile:@"failed.png"];
-	    ccsResult.position = ccp(size.width/2, size.height/2);
-	    ccsResult.scale = scaleBase;
+		ccsResult = [CCSprite spriteWithFile:@"UI/failed.png"];
 	    [self createDogLauph];
-		[cclInfo addChild:ccsResult];
 		break;
 
 	case TooRate:
 		cclResult.string = @"「どうした？ブルって動けなかったかい？」\r\r噛みつかれる前に離そう！";
-		ccsResult = [CCSprite spriteWithFile:@"failed.png"];
-	    ccsResult.position = ccp(size.width/2, size.height/2);
-	    ccsResult.scale = scaleBase;
-	    [cclInfo addChild:ccsResult];
+		ccsResult = [CCSprite spriteWithFile:@"UI/failed.png"];
 	    break;
     default:
         break;
 	}
 
-	ccsRetry = [CCSprite spriteWithFile:@"retry.png"];
+    ccsResult.position = ccp(size.width/2
+                        , (size.height- 100- ([ccsResult contentSize].height / 2) * scaleBase) );
+    ccsResult.scale = scaleBase;
+    [cclInfo addChild:ccsResult];
+
+	ccsRetry = [CCSprite spriteWithFile:@"UI/retry.png"];
     ccsRetry.position = ccp(size.width/8, size.height/8);
     ccsRetry.scale = scaleBase;
     [cclInfo addChild:ccsRetry];
 
-	ccsNext = [CCSprite spriteWithFile:@"next.png"];
+	ccsNext = [CCSprite spriteWithFile:@"UI/next.png"];
     ccsNext.position = ccp(size.width - size.width/8, size.height/8);
     ccsNext.scale = scaleBase;
     [cclInfo addChild:ccsNext]; 
@@ -851,15 +857,21 @@ const float inputCancelTime = 0.5f;
 	touchPoint = [touch locationInView:[touch view]];
     CGPoint location = [[CCDirector sharedDirector] convertToGL:touchPoint];
 
+    float scaleBase = [AppController getScaleBase];
+
     if([self touchEndButton:ccsRetry touchLocation:location]) {
     	[self hideResult];
+        [background setScale:scaleBase];
         [layerUnit setScale:1];
+        [layerUnit setPosition: CGPointZero];
 		[self changeReadyState: true];    	
     }
     if([self touchEndButton:ccsNext touchLocation:location]) {
     	[self hideResult];
 		[self createDogStand];
+        [background setScale:scaleBase];
         [layerUnit setScale:1];
+        [layerUnit setPosition: CGPointZero];
         self.isTouchEnabled = NO;
     	[layerTitle dispTitle];
     }

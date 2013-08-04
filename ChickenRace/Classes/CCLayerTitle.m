@@ -85,15 +85,15 @@ CCSprite *title_buttons;
 	float scaleBase = [AppController getScaleBase];
 	float scaleFactor = [AppController getScaleFactor];
     
-    title_logo = [CCSprite spriteWithFile:@"title_logo.png"];
-	title_logo.position = ccp(size.width/2, size.height - 88 - title_logo.contentSize.height * (0.5f * scaleBase));
+    title_logo = [CCSprite spriteWithFile:@"UI/title_logo.png"];
+	title_logo.position = ccp(size.width/2, size.height - 20 - title_logo.contentSize.height / 2 * scaleBase);
     title_logo.scale = scaleBase;
   
 	// add the label as a child to this Layer
 	[self addChild: title_logo];
     
-    ccsStartButton = [CCSprite spriteWithFile:@"start_button.png"];
-	ccsStartButton.position = ccp(size.width/2, ccsStartButton.contentSize.height * (0.5f * scaleBase));
+    ccsStartButton = [CCSprite spriteWithFile:@"UI/start_button.png"];
+	ccsStartButton.position = ccp(size.width/2, 16 + ccsStartButton.contentSize.height / 2 * scaleBase);
     ccsStartButton.scale = scaleBase;
 
 	[ccsStartButton runAction: 
@@ -118,13 +118,15 @@ CCSprite *title_buttons;
 	//
 	// Leaderboards and Achievements
 	//
-	ccsTweetButton = [CCSprite spriteWithFile:@"tweet.png"];
-    [ccsTweetButton setPosition:ccp(size.width/6, size.height-88*scaleFactor)];
+	ccsTweetButton = [CCSprite spriteWithFile:@"UI/tweet.png"];
+    [ccsTweetButton setPosition:ccp(16 + ccsTweetButton.contentSize.width / 2 * scaleBase, 
+    								16 + (ccsTweetButton.contentSize.height / 2) * scaleBase )];
     [ccsTweetButton setScale:scaleBase];
 	[self addChild:ccsTweetButton];
     
-	ccsRankingButton = [CCSprite spriteWithFile:@"ranking.png"];
-    [ccsRankingButton setPosition:ccp(size.width/6*5, size.height-88*scaleFactor)];
+	ccsRankingButton = [CCSprite spriteWithFile:@"UI/ranking.png"];
+    [ccsRankingButton setPosition:ccp(size.width - (16 + ccsTweetButton.contentSize.width / 2 * scaleBase)
+    								, 16 + (ccsRankingButton.contentSize.height / 2) * scaleBase )];
     [ccsRankingButton setScale:scaleBase];
 	[self addChild:ccsRankingButton];
     
@@ -155,7 +157,7 @@ CCSprite *title_buttons;
     if([self touchEndButton:ccsStartButton touchLocation:location]) {
 
         CGSize size = [[CCDirector sharedDirector] winSize];
-        id riseUp = [CCEaseIn actionWithAction: [CCMoveTo actionWithDuration:0.5 position:ccp(size.width/ 2, size.height*2) ] rate:2 ];
+        id riseUp = [CCEaseIn actionWithAction: [CCMoveBy actionWithDuration:0.5 position:ccp(0, size.height*2) ] rate:2 ];
 	    [self runAction: [CCSequence actions: [CCDelayTime actionWithDuration:0.1], riseUp, nil]];
 	    [self scheduleOnce:@selector(startGameScene:) delay:0.6];
     }

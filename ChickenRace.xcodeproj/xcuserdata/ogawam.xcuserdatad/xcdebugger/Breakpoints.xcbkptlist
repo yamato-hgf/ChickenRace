@@ -293,8 +293,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "383"
          endingLineNumber = "383"
-         landmarkName = "-createEyeFlash:rotation:"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -319,8 +319,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "583"
          endingLineNumber = "583"
-         landmarkName = "@implementation CCLayerGame"
-         landmarkType = "3">
+         landmarkName = "-gameState:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -527,7 +527,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "507"
          endingLineNumber = "507"
-         landmarkName = "-gameState:"
+         landmarkName = "-readyState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -540,7 +540,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "512"
          endingLineNumber = "512"
-         landmarkName = "-gameState:"
+         landmarkName = "-readyState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -592,7 +592,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "458"
          endingLineNumber = "458"
-         landmarkName = "-changeReadyState:"
+         landmarkName = "-tutorialState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -605,7 +605,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "473"
          endingLineNumber = "473"
-         landmarkName = "-readyState:"
+         landmarkName = "-changeReadyState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -618,7 +618,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "451"
          endingLineNumber = "451"
-         landmarkName = "-changeReadyState:"
+         landmarkName = "-tutorialState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -631,7 +631,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "460"
          endingLineNumber = "460"
-         landmarkName = "-changeReadyState:"
+         landmarkName = "-tutorialState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -644,7 +644,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "452"
          endingLineNumber = "452"
-         landmarkName = "-changeReadyState:"
+         landmarkName = "-tutorialState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -657,8 +657,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "476"
          endingLineNumber = "476"
-         landmarkName = "-readyState:"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -670,8 +670,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "461"
          endingLineNumber = "461"
-         landmarkName = "-changeReadyState:"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -722,8 +722,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "506"
          endingLineNumber = "506"
-         landmarkName = "@implementation CCLayerGame"
-         landmarkType = "3">
+         landmarkName = "-readyState:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -787,8 +787,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "505"
          endingLineNumber = "505"
-         landmarkName = "@implementation CCLayerGame"
-         landmarkType = "3">
+         landmarkName = "-readyState:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -982,7 +982,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "213"
          endingLineNumber = "213"
-         landmarkName = "-startGameScene:"
+         landmarkName = "-ccTouchEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1099,7 +1099,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "432"
          endingLineNumber = "432"
-         landmarkName = "-hideIzaTouch"
+         landmarkName = "-dispIzaTouch"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1227,7 +1227,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "291"
          endingLineNumber = "291"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1266,7 +1266,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "292"
          endingLineNumber = "292"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1279,7 +1279,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "295"
          endingLineNumber = "295"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1461,7 +1461,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "285"
          endingLineNumber = "285"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1474,7 +1474,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "301"
          endingLineNumber = "301"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1487,8 +1487,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "302"
          endingLineNumber = "302"
-         landmarkName = "-createDogVite"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1500,7 +1500,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "284"
          endingLineNumber = "284"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1526,7 +1526,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "290"
          endingLineNumber = "290"
-         landmarkName = "-createDogVite"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1605,6 +1605,58 @@
          startingLineNumber = "129"
          endingLineNumber = "129"
          landmarkName = "-bannerView:didFailToReceiveAdWithError:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "395790144.10947"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "417"
+         endingLineNumber = "417"
+         landmarkName = "-dispIzaTouch"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "395790145.925473"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "414"
+         endingLineNumber = "414"
+         landmarkName = "-dispIzaTouch"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "396925368.27849"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "411"
+         endingLineNumber = "411"
+         landmarkName = "-dispIzaTouch"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "396925379.116411"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "386"
+         endingLineNumber = "386"
+         landmarkName = "-gameStart"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
