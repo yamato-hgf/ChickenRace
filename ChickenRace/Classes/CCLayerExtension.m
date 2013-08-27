@@ -22,8 +22,8 @@
 -(CGRect)rectForSprite:(CCSprite *)sprite {
     CGRect rect;
     if(sprite != NULL) {
-    	float h = [sprite contentSize].height/2;
-    	float w = [sprite contentSize].width/2;
+    	float h = [sprite contentSize].height*[AppController getScaleBase];
+    	float w = [sprite contentSize].width*[AppController getScaleBase];
     	float x = sprite.position.x - w/2;
     	float y = sprite.position.y - h/2;
     	rect = CGRectMake(x,y,w,h);
@@ -32,13 +32,28 @@
 }
 
 -(bool)touchBeganButton:(CCSprite *)sprite touchLocation:(CGPoint)location {
+    return [self touchBeganButton:sprite touchLocation:location scaling:true];
+}
+
+-(bool)touchBeganButton:(CCSprite *)sprite touchLocation:(CGPoint)location scaling:(bool)isScale {
     if(CGRectContainsPoint([self rectForSprite:sprite], location)) {
-    	[sprite setScale:0.75f * [AppController getScaleBase]];
-    	[sprite pauseSchedulerAndActions];
+        if(isScale) {
+        	[sprite setScale:0.75f * [AppController getScaleBase]];
+        	[sprite pauseSchedulerAndActions];
+        }
         ccsTouchBegan = sprite;
     	return true;
 	}	
 	return false;
+}
+
+-(bool)touchMovedButton:(CCSprite *)sprite touchLocation:(CGPoint)location {
+    ccsTouchMoved = NULL;
+    if(CGRectContainsPoint([self rectForSprite:sprite], location)) {
+        ccsTouchMoved = sprite;
+        return true;
+    }
+    return false;
 }
 
 -(bool)touchEndButton:(CCSprite *)sprite touchLocation:(CGPoint)location {

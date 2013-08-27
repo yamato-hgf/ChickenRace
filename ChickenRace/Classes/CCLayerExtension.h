@@ -11,8 +11,11 @@
 
 @interface CCLayerExtension : CCLayer {
 	CCSprite *ccsTouchBegan;
+	CCSprite *ccsTouchMoved;
 }
 -(bool)touchBeganButton:(CCSprite *)sprite touchLocation:(CGPoint)location;
+-(bool)touchBeganButton:(CCSprite *)sprite touchLocation:(CGPoint)location scaling:(bool)isScale;
+-(bool)touchMovedButton:(CCSprite *)sprite touchLocation:(CGPoint)location;
 -(bool)touchEndButton:(CCSprite *)sprite touchLocation:(CGPoint)location;
 -(bool)touchEndButton:(CCSprite *)sprite touchLocation:(CGPoint)location isRespawn:(bool)respawn;
 

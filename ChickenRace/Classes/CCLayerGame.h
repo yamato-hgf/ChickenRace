@@ -12,7 +12,7 @@
 #import "cocos2d.h"
 @class CCLayerTitle;
 
-#define NUM_OF_GAMES 3
+#define NUM_OF_GAMES 5
 
 typedef enum PartTypes : NSUInteger {
 	PartTypeEyeL,
@@ -52,6 +52,7 @@ typedef enum PartTypes : NSUInteger {
 	CCSprite* ccsResult;
 	CCSprite* ccsRetry;
 	CCSprite* ccsNext;
+	CCSprite* ccsHome;
 
     CCLayerTitle *layerTitle;
     
@@ -79,7 +80,7 @@ typedef enum PartTypes : NSUInteger {
 	float avoidTime;
 
 	int gameCount;
-	int scores[NUM_OF_GAMES];
+	float scores[NUM_OF_GAMES];
 
 	enum ResultType {
 		None,

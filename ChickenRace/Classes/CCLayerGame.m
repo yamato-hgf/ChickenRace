@@ -82,11 +82,13 @@ static CCLayerGame* instance;
 
         // ask director for the window size
         CGSize winSize = [[CCDirector sharedDirector] winSize];
- 		float scaleBase = [AppController getScaleBase];
+        float scaleFactor = [AppController getScaleFactor];
+        float scale = (winSize.height / scaleFactor) / 960;
+        scale -= fmod(scale, 0.5f);
 
-        background = [CCSprite spriteWithFile:@"Game/20110505_05.jpg"];
+        background = [CCSprite spriteWithFile:@"Game/background.png"];
         background.position = ccp(winSize.width/2, 0);
-        background.scale = scaleBase;
+        background.scale = scale;
         background.anchorPoint = ccp(0.5f,0);
         // add the label as a child to this Layer
         [self addChild: background];
@@ -107,6 +109,10 @@ static CCLayerGame* instance;
                                                  position:kAdPositionTop];
         
         [self addChild:adLayer];
+
+        gameCount = 0;
+        for(int i = 0; i < NUM_OF_GAMES; ++i)
+            scores[i] = 0;
 
         [self schedule:@selector(inputUpdate:)];
 	}
@@ -270,6 +276,7 @@ static CCLayerGame* instance;
                 [CCFadeOut actionWithDuration:1],
                 nil
             ],
+            [CCCallFuncN actionWithTarget:self selector:@selector(cfnRemove:)],
             nil
         ]
      ];
@@ -312,17 +319,19 @@ static CCLayerGame* instance;
 
 - (void) createUnitParts: (const UnitPart *) unitParts
 {
-//	[layerUnit removeAllChildrenWithCleanup:YES];
+	[layerUnit removeAllChildrenWithCleanup:YES];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
 	float scaleBase = [AppController getScaleBase];
     float scaleFactor = [AppController getScaleFactor];
 
     PartCtrl* ctrl;
+/*
 	if(unitCtrls != nil) {
         ctrl = unitCtrls[0];
         [ctrl.sprite.parent removeChild: ctrl.sprite cleanup: YES];
 		[unitCtrls release];
     }
+*/
     unitCtrls = [[NSMutableArray alloc] init];
     for(int i = 0; unitParts[i].identifier > 0; ++i) {
         const UnitPart* part = &unitParts[i];
@@ -344,7 +353,6 @@ static CCLayerGame* instance;
             }
     	}
         else {
-            CGSize size = [sprite contentSize];
         	position.x += winSize.width / 2;
         	sprite.scale = scaleBase;
         	sprite.rotation = part->rotation;
@@ -370,12 +378,16 @@ static CCLayerGame* instance;
     [sprite setScaleX:4.f * scaleBase];
     [sprite setScaleY:1.5f * scaleBase];
     [sprite setRotation:angle];
-    [layerUnit addChild:sprite z:parent.zOrder+1];
+    [self addChild:sprite z:parent.zOrder+1];
 
     [sprite runAction:
-        [CCSpawn actions:
-         [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.1f scaleX:scaleBase scaleY:scaleBase] rate:4 ],
-            [CCEaseOut actionWithAction:[CCFadeOut actionWithDuration:1] rate:4 ],
+        [CCSequence actions:
+            [CCSpawn actions:
+                [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.1f scaleX:scaleBase scaleY:scaleBase] rate:4 ],
+                [CCEaseOut actionWithAction:[CCFadeOut actionWithDuration:1] rate:4 ],
+                nil
+            ],
+            [CCCallFuncN actionWithTarget:self selector:@selector(cfnRemove:)],
             nil
         ]
     ];    
@@ -409,17 +421,17 @@ static CCLayerGame* instance;
 
     CGSize size = [[CCDirector sharedDirector] winSize];
 	float scaleBase = [AppController getScaleBase];
+    float scaleFactor = [AppController getScaleFactor];
 
-	ccsIza = [CCSprite spriteWithFile:@"UI/iza.png"];
-    ccsIza.position = ccp(size.width/2, 160);
+    if(ccsIza == NULL) {
+    	ccsIza = [CCSprite spriteWithFile:@"UI/iza.png"];
+        ccsIza.position = ccp(size.width/2, 320 * scaleBase * scaleFactor);
+        [self addChild:ccsIza];
+    }
     ccsIza.scale = scaleBase;
-    [ccsIza runAction:
-        [CCRepeatForever actionWithAction: 
-            [CCRotateBy actionWithDuration:1 angle:90]
-        ]
-    ];
-    [self addChild:ccsIza];
-
+    [ccsIza setOpacity:255];
+    [ccsIza stopAllActions];
+    
 	ccsTouch = [CCSprite spriteWithFile:@"UI/touch.png"];
     ccsTouch.position = ccp(ccsIza.position.x, ccsIza.position.y
                         - ([ccsIza contentSize].height / 2 * scaleBase)
@@ -441,10 +453,24 @@ static CCLayerGame* instance;
 
 - (void) hideIzaTouch 
 {
-	[self removeChild:ccsIza cleanup:YES];
-	[self removeChild:ccsTouch cleanup:YES];
-	ccsIza = NULL;
-	ccsTouch = NULL;
+    if(isDispIzaTouch) {
+        float scaleBase = [AppController getScaleBase];
+    //	[self removeChild:ccsIza cleanup:YES];
+        [ccsIza stopAllActions];
+        [ccsIza runAction:
+            [CCSequence actions:
+                [CCEaseOut actionWithAction:
+                    [CCScaleTo actionWithDuration:0.1f scale:scaleBase * 0.8f] rate:4
+                ],
+             [CCFadeOut actionWithDuration:0.2f],
+             nil
+            ]
+        ];
+
+    	[self removeChild:ccsTouch cleanup:YES];
+    //	ccsIza = NULL;
+    	ccsTouch = NULL;
+    }
 	isDispIzaTouch = FALSE;
 }
 
@@ -476,38 +502,32 @@ const float waitForBiteMin = 1;
 const float waitForBiteMax = 3;
 -(void) readyState: (ccTime)dt {
 
-	if(isTouchBegan) {
-	    CGSize size = [[CCDirector sharedDirector] winSize];
-		float scaleBase = [AppController getScaleBase];
- 	    CGPoint vec = ccp(touchPoint.x - size.width/2
-	    				, size.height/2 - touchPoint.y );
-	   	if(ccpDistance(vec, readyTouchPoint) < readyTouchRadius) {
-	   		[self hideIzaTouch];
+	if(isTouchBegan && !isDispIzaTouch) {
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        float scaleBase = [AppController getScaleBase];
+        
+        ccsFight = [CCSprite spriteWithFile:@"UI/fight.png"];
+        ccsFight.position = ccp(size.width/2, (size.height- 100- ([ccsFight contentSize].height / 2) * scaleBase));
+        ccsFight.scale = scaleBase * 4.0f;
+        id actSclIn = [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase] rate:2];
+        id actSclOut = [CCSpawn actions:[CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase * 2.f] rate:3],
+                                        [CCFadeOut actionWithDuration:0.1f], nil ];
+        id actions = [CCSequence actions: actSclIn, [CCDelayTime actionWithDuration:1], actSclOut, nil ];
+        [ccsFight runAction: actions];
+        [self addChild:ccsFight];
+        
+        waitForBiteTime = CCRANDOM_0_1() * waitForBiteMax - waitForBiteMin;
+        waitForBiteTime = waitForBiteMin + waitForBiteTime;
 
-			ccsFight = [CCSprite spriteWithFile:@"UI/fight.png"];
-            ccsFight.position = ccp(size.width/2, (size.height- 100- ([ccsFight contentSize].height / 2) * scaleBase));
-		    ccsFight.scale = scaleBase * 4.0f;
-		    id actSclIn = [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase] rate:2];
-		    id actSclOut = [CCSpawn actions:[CCEaseOut actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:scaleBase * 2.f] rate:3],
-		    								[CCFadeOut actionWithDuration:0.1f], nil ];
-		    id actions = [CCSequence actions: actSclIn, [CCDelayTime actionWithDuration:1], actSclOut, nil ];
-		    [ccsFight runAction: actions];
-		    [self addChild:ccsFight];
-            
-            waitForBiteTime = CCRANDOM_0_1() * waitForBiteMax - waitForBiteMin;
-            waitForBiteTime = waitForBiteMin + waitForBiteTime;
+        isTouchBegan = false;
+        isTouchMoved = false;
+        isTouchEnd = false;
 
-            isTouchBegan = false;
-            isTouchMoved = false;
-            isTouchEnd = false;
+        stateTimeCount = 0;
 
-		   	stateTimeCount = 0;
-
-		    [self unschedule:@selector(readyState:)];
-		    [self schedule:@selector(gameState:) interval:1/60.f];
-	   	}
-	   	isTouchBegan = false;
-	}
+        [self unschedule:@selector(readyState:)];
+        [self schedule:@selector(gameState:) interval:1/60.f];      
+    }
 }
 
 const float waitForJudge = 2;
@@ -516,33 +536,18 @@ const float warningTouchRadius = 80;
 	stateTimeCount += dt;
     
 	if(stateTimeCount < waitForJudge) {
-		if(isTouchEnd)
+		if(isTouchEnd || (isTouchMoved && ccsTouchMoved != ccsIza))
 			[self dispIzaTouch];
-		if(isTouchBegan)
+		if(isTouchBegan && ccsTouchBegan != ccsIza)
 			[self hideIzaTouch];
-		if(isTouchMoved) {
-		    CGSize size = [[CCDirector sharedDirector] winSize];
-		    CGPoint vec = ccp(touchPoint.x - size.width/2
-		    				, size.height/2 - touchPoint.y );
-		    float distance = ccpDistance(vec, readyTouchPoint);
-		   	if(distance > readyTouchRadius)
-				[self dispIzaTouch];
-			else [self hideIzaTouch];
-		}
 	}
 	else {
-		if(isTouchMoved) {
-		    CGSize size = [[CCDirector sharedDirector] winSize];
-		    CGPoint vec = ccp(touchPoint.x - size.width/2
-		    				, size.height/2 - touchPoint.y );
-		    float distance = ccpDistance(vec, readyTouchPoint);
-		   	if(distance > readyTouchRadius) {
-                resultType = TooFar;
-				[self hideIzaTouch];
-				[self removeChild: ccsFight cleanup:YES];
-				[self unschedule:@selector(gameState:)];
-		   		[self changeResultState:0];
-			}
+		if(isTouchMoved && ccsTouchMoved != ccsIza) {
+           resultType = TooFar;
+			[self hideIzaTouch];
+			[self removeChild: ccsFight cleanup:YES];
+			[self unschedule:@selector(gameState:)];
+	   		[self changeResultState:0];
 		}
 		else if(isTouchEnd || isDispIzaTouch) {
             resultType = TooFast;
@@ -557,8 +562,6 @@ const float warningTouchRadius = 80;
 	isTouchEnd = false;
     
     if(stateTimeCount > waitForBiteTime + waitForJudge) {
-	    float scaleBase = [AppController getScaleBase];
-
         CCSprite* parent = [self findUnitPartSpriteByType:PartTypeEyeL];
         [self createEyeFlash:parent rotation:0];
         [self createEyeFlash:parent rotation:90];
@@ -599,6 +602,10 @@ const float slowMotionMin = 0.01f;
     [self removeChild:sender cleanup:YES];
 }
 
+-(float) calcAvoidTime {
+    return max(0, min(biteTimeCount, biteTimeSec) + elapsedTime);
+}
+
 -(void) biteState: (ccTime)dt {
 	float dtRate = 1;
 	float biteTimeBefore = biteTimeCount;
@@ -623,7 +630,6 @@ const float slowMotionMin = 0.01f;
 	float zoomRate = min(1, rate / biteZoomTimeRate);
     float scaleFactor = [AppController getScaleFactor];
     float scaleBase = [AppController getScaleBase];
-    float bgScale = scaleBase * biteDogScale;
 
 //    [background setScale: scaleBase + (bgScale - scaleBase) * zoomRate];
 	[layerUnit setScale: 1 + (biteDogScale - 1) * zoomRate];
@@ -647,7 +653,7 @@ const float slowMotionMin = 0.01f;
                 [cclInfo addChild:cclScore];
 
 		        elapsedTime = [startTime timeIntervalSinceNow];
-		        cclScore.string = [NSString stringWithFormat:@"%07d micro sec", (biteTimeCount+elapsedTime)*1000000];
+		        cclScore.string = [NSString stringWithFormat:@"%f sec", [self calcAvoidTime]];
 				resultType = Success;
 			}
 		}
@@ -662,11 +668,7 @@ const float slowMotionMin = 0.01f;
 		break;
 
 	case Success:
-		if(biteTimeCount < biteTimeSec) {
-			float sec = min(biteTimeCount, biteTimeSec);
-			int64_t score = (sec+elapsedTime) *1000000;
-	        cclScore.string = [NSString stringWithFormat:@"%07d micro sec", score];
-	    }
+        cclScore.string = [NSString stringWithFormat:@"%f sec", [self calcAvoidTime]];
 	    if(bitePlayTimeSec + biteTimeCount > biteTimeSec) {
 	    	if(cclSpark == NULL) {
 		        CGSize size = [[CCDirector sharedDirector] winSize];	        
@@ -680,48 +682,77 @@ const float slowMotionMin = 0.01f;
 		        ];
 		        [self addChild: cclSpark];
 
-		        CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark.png"];
-		        sprite.position = ccp(size.width/2, size.height/2-64);
-		        [sprite setAnchorPoint:ccp(0.5,0.5)];
-				[sprite setScale: scaleBase];
-		        [sprite runAction: 
-		        	[CCSpawn actions:
-						[CCEaseOut actionWithAction:
-							[CCScaleBy actionWithDuration: 0.5/dtRate scale:6* scaleBase] rate:2
-						],
-		        		[CCSequence actions:
-		        			[CCDelayTime actionWithDuration: 0.25/dtRate],
-							[CCFadeOut actionWithDuration: 0.25/dtRate],
-							nil
-						],
-						nil
-					]
-		        ];
-	            [cclSpark addChild: sprite];
+                for(int i = 0; i < 3; ++i) {
+    		        CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark01.png"];
+    		        sprite.position = ccp(size.width/2, size.height/2-64);
+    		        [sprite setAnchorPoint:ccp(0.5,0.5)];
+    				[sprite setScale: scaleBase];
+                    [sprite setRotation: 45+ i * 120];
+    		        [sprite runAction: 
+    		        	[CCSpawn actions:
+    						[CCEaseOut actionWithAction:
+    							[CCScaleTo actionWithDuration: 0.5/dtRate scale:1.2f* scaleBase] rate:2
+    						],
+    		        		[CCSequence actions:
+    		        			[CCDelayTime actionWithDuration: 0.25/dtRate],
+    							[CCFadeOut actionWithDuration: 0.25/dtRate],
+                                nil
+    						],
+    						nil
+    					]
+    		        ];
+    	            [cclSpark addChild: sprite];
+                }
 
-		        sprite = [CCSprite spriteWithFile:@"Game/spark.png"];
-		        sprite.position = ccp(size.width/2, size.height/2-64);
-		        [sprite setAnchorPoint:ccp(0.5,0.5)];
-				[sprite setScale: 0.75f * scaleBase];
-				[sprite setRotation: 45];
-		        [sprite runAction: 
-		        	[CCSpawn actions:
-		        		[CCFadeIn actionWithDuration:0.1/dtRate],
-						[CCEaseOut actionWithAction: 
-							[CCScaleBy actionWithDuration: 0.5/dtRate scale:4* scaleBase] rate:2
-						],
-		        		[CCSequence actions:
-		        			[CCDelayTime actionWithDuration: 0.25/dtRate],
-							[CCFadeOut actionWithDuration: 0.25/dtRate],
-							nil
-						],
-						nil
-					]
-		        ];
-	            [cclSpark addChild: sprite];
+		        for(int i = 0; i < 3; ++i) {
+                    CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark00.png"];
+    		        sprite.position = ccp(size.width/2, size.height/2-64);
+    		        [sprite setAnchorPoint:ccp(0.5,0.5)];
+    				[sprite setScale: 0.9f* scaleBase];
+                    [sprite setRotation: i * 120];
+    		        [sprite runAction: 
+    		        	[CCSpawn actions:
+    						[CCEaseIn actionWithAction:
+    							[CCScaleTo actionWithDuration: 0.5/dtRate scale:1.1f* scaleBase]
+                            rate:2],
+    		        		[CCSequence actions:
+    		        			[CCDelayTime actionWithDuration: 0.25/dtRate],
+    							[CCFadeOut actionWithDuration: 0.25/dtRate],
+                    			nil
+    						],
+    						nil
+    					]
+    		        ];
+    	            [cclSpark addChild: sprite];
+                }
+
+                for(int i = 0; i < 1; ++i) {
+                    CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark02.png"];
+                    sprite.position = ccp(size.width/2, size.height/2-64);
+                    [sprite setAnchorPoint:ccp(0.5,0.5)];
+                    [sprite setScale: 0.75f* scaleBase];
+                    [sprite setRotation: 22.5f + i * 120];
+                    [sprite runAction: 
+                        [CCSpawn actions:
+                            [CCEaseOut actionWithAction:
+                                [CCScaleTo actionWithDuration: 0.4/dtRate scale:2.f* scaleBase]
+                            rate:2],
+                            [CCSequence actions:
+                                [CCDelayTime actionWithDuration: 0.2/dtRate],
+                                [CCFadeOut actionWithDuration: 0.2/dtRate],
+                                nil
+                            ],
+                            nil
+                        ]
+                    ];
+                    [cclSpark addChild: sprite];
+                }
 			}
 		}        
 		break;
+            
+    default:
+        break;
 	}
 
 	if(biteTimeCount >= biteWaitTimeSec) {
@@ -730,13 +761,12 @@ const float slowMotionMin = 0.01f;
         
 		[cclInfo removeChild:cclFade cleanup:YES];
 		[self unschedule:@selector(biteState:)];
-		[self scheduleOnce:@selector(changeResultState:) delay:0.6];
+		[self scheduleOnce:@selector(changeResultState:)delay:0];//delay:0.6];
 	}
 }
 
 -(void) changeResultState:(ccTime)dt {
     CGSize size = [[CCDirector sharedDirector] winSize];
-    float scaleFactor = [AppController getScaleFactor];
 	float scaleBase = [AppController getScaleBase];
 
 	cclFade = [CCLayerColor layerWithColor:ccc4(255,255,255,0)];
@@ -746,26 +776,57 @@ const float slowMotionMin = 0.01f;
 	[cclInfo addChild:cclFade z:0];
 
     cclResult = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:16];
-    cclResult.position = CGPointMake(size.width/2, size.height/2- 80);
+    cclResult.position = CGPointMake(size.width/2, size.height/2);
     cclResult.color = ccc3(0,0,0);
     [cclInfo addChild:cclResult];
 
-    CCLOG(@"home %d", unitCtrls.count);
-    PartCtrl* ctrl;
-    CCSprite* sprite;
-    CCTexture2D* texture;
+    float sec = [self calcAvoidTime];
 
+    scores[gameCount] = -1;
 	switch(resultType) {
 	case Success:
-		{
-			ccsResult = [CCSprite spriteWithFile:@"UI/win.png"];
+		ccsResult = [CCSprite spriteWithFile:@"UI/win.png"];
+        scores[gameCount] = sec;
+        cclResult.string = [NSString stringWithFormat:@"「ふっ、やるじゃねぇか」\r\r%f sec", sec];
 
-		    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
-		    int64_t score = (biteTimeSec+elapsedTime) *1000000;
-		    scoreReporter.value = score;
-	    	cclResult.string = [NSString stringWithFormat:@"「ふっ、やるじゃねぇか」\r\r%07d micro sec", score];
-		    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {}]; 
-	    }		
+        gameCount++;
+        if(gameCount < NUM_OF_GAMES) {
+            ccsNext = [CCSprite spriteWithFile:@"UI/next_button.png"];
+            ccsNext.position = ccp(size.width/2, 128 * scaleBase);
+            ccsNext.scale = scaleBase;
+
+            [ccsNext runAction: 
+                [CCRepeatForever actionWithAction: 
+                    [CCSequence actions: 
+                        [CCEaseInOut actionWithAction: 
+                            [CCScaleTo actionWithDuration:0.5f scale:scaleBase * 0.9f] 
+                            rate:3 
+                        ], 
+                        [CCEaseInOut actionWithAction: 
+                            [CCScaleTo actionWithDuration:0.5f scale:scaleBase] 
+                            rate:3 
+                        ], 
+                        nil
+                    ] 
+                ]
+            ];        
+            [cclInfo addChild:ccsNext];
+        }
+        else {
+            GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
+            float score = 0;
+            for(int i = 0; i < NUM_OF_GAMES; ++i)
+                if(scores[i] >= 0)
+                    score += scores[i];
+            scoreReporter.value = score * 1000000;
+            [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {}]; 
+
+            NSString *nssTotal = [NSString stringWithFormat:@"トータルスコア\r%f sec", score];
+            CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:nssTotal fontName:@"Marker Felt" fontSize:16];
+            cclTotal.position = CGPointMake(size.width/2, size.height/2- 80);
+            cclTotal.color = ccc3(0,0,0);
+            [cclInfo addChild:cclTotal];            
+        }
 		break;
 	case TooFar:
 		cclResult.string = @"「おいおい、どこへ行こうってんだ」\r\r中心から外れすぎないように！";
@@ -792,17 +853,27 @@ const float slowMotionMin = 0.01f;
     ccsResult.scale = scaleBase;
     [cclInfo addChild:ccsResult];
 
-	ccsRetry = [CCSprite spriteWithFile:@"UI/retry.png"];
-    ccsRetry.position = ccp(size.width/8, size.height/8);
+	ccsHome = [CCSprite spriteWithFile:@"UI/home_button.png"];
+    ccsHome.position = ccp(size.width - size.width/8, size.width/8);
+    ccsHome.scale = scaleBase;
+    [cclInfo addChild:ccsHome]; 
+
+    ccsRetry = [CCSprite spriteWithFile:@"UI/retry_button.png"];
+    ccsRetry.position = ccp(size.width/8, size.width/8);
     ccsRetry.scale = scaleBase;
     [cclInfo addChild:ccsRetry];
+    
+    for(int i = 0; i < gameCount; ++i) {
+        char* rounds[] = { "1st", "2nd", "3rd", "4th", "5th" };
+        NSString *nssScore = [NSString stringWithFormat:@"%s %f sec", rounds[i], scores[i]];
+        CCLabelTTF* cclScoreLog = [CCLabelTTF labelWithString:nssScore fontName:@"Marker Felt" fontSize:24];
+        cclScoreLog.position = CGPointMake(size.width/4, (size.height/ 2) - (i * 24));
+        //cclScore.color = ccc3(0,0,0);
+        [cclScoreLog setAnchorPoint: ccp(0,0.5f)];
+        [cclInfo addChild:cclScoreLog];
+    }
 
-	ccsNext = [CCSprite spriteWithFile:@"UI/next.png"];
-    ccsNext.position = ccp(size.width - size.width/8, size.height/8);
-    ccsNext.scale = scaleBase;
-    [cclInfo addChild:ccsNext]; 
-
-	[self hideIzaTouch];
+    [self hideIzaTouch];
 }
 
 const float inputCancelTime = 0.5f;
@@ -830,7 +901,11 @@ const float inputCancelTime = 0.5f;
     CGPoint location = [[CCDirector sharedDirector] convertToGL:touchPoint];
 
     [self touchBeganButton:ccsRetry touchLocation:location];
+    [self touchBeganButton:ccsHome touchLocation:location];
     [self touchBeganButton:ccsNext touchLocation:location];
+    if([self touchBeganButton:ccsIza touchLocation:location scaling:false]) {
+        [self hideIzaTouch];  
+    }
 
 	isTouchBegan = true;
 	inputCount = inputCancelTime;
@@ -840,7 +915,10 @@ const float inputCancelTime = 0.5f;
 -(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	touchPoint = [touch locationInView:[touch view]];
+    CGPoint location = [[CCDirector sharedDirector] convertToGL:touchPoint];
+
 	isTouchMoved = true;
+    [self touchMovedButton:ccsIza touchLocation:location];
 	inputCount = inputCancelTime;
 }
 
@@ -848,7 +926,8 @@ const float inputCancelTime = 0.5f;
 	[cclInfo removeAllChildrenWithCleanup:YES];
 	[self removeChild:cclSpark cleanup:YES];
 	cclSpark = NULL;
-	ccsNext = NULL;
+	ccsHome = NULL;
+    ccsNext = NULL;
 	ccsRetry = NULL;
 }
 
@@ -859,14 +938,22 @@ const float inputCancelTime = 0.5f;
 
     float scaleBase = [AppController getScaleBase];
 
+    if([self touchEndButton:ccsNext touchLocation:location]) {
+        [self hideResult];
+        [background setScale:scaleBase];
+        [layerUnit setScale:1];
+        [layerUnit setPosition: CGPointZero];
+        [self changeReadyState: true];      
+    }
     if([self touchEndButton:ccsRetry touchLocation:location]) {
     	[self hideResult];
         [background setScale:scaleBase];
         [layerUnit setScale:1];
         [layerUnit setPosition: CGPointZero];
 		[self changeReadyState: true];    	
+        gameCount = 0;
     }
-    if([self touchEndButton:ccsNext touchLocation:location]) {
+    if([self touchEndButton:ccsHome touchLocation:location]) {
     	[self hideResult];
 		[self createDogStand];
         [background setScale:scaleBase];
@@ -874,6 +961,7 @@ const float inputCancelTime = 0.5f;
         [layerUnit setPosition: CGPointZero];
         self.isTouchEnabled = NO;
     	[layerTitle dispTitle];
+        gameCount = 0;
     }
 
 	isTouchEnd = true;

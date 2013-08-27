@@ -83,7 +83,6 @@ CCSprite *title_buttons;
 	// ask director for the window size
 	CGSize size = [[CCDirector sharedDirector] winSize];
 	float scaleBase = [AppController getScaleBase];
-	float scaleFactor = [AppController getScaleFactor];
     
     title_logo = [CCSprite spriteWithFile:@"UI/title_logo.png"];
 	title_logo.position = ccp(size.width/2, size.height - 20 - title_logo.contentSize.height / 2 * scaleBase);
@@ -93,7 +92,7 @@ CCSprite *title_buttons;
 	[self addChild: title_logo];
     
     ccsStartButton = [CCSprite spriteWithFile:@"UI/start_button.png"];
-	ccsStartButton.position = ccp(size.width/2, 16 + ccsStartButton.contentSize.height / 2 * scaleBase);
+	ccsStartButton.position = ccp(size.width/2, 128 * scaleBase);
     ccsStartButton.scale = scaleBase;
 
 	[ccsStartButton runAction: 
@@ -118,15 +117,15 @@ CCSprite *title_buttons;
 	//
 	// Leaderboards and Achievements
 	//
-	ccsTweetButton = [CCSprite spriteWithFile:@"UI/tweet.png"];
+	ccsTweetButton = [CCSprite spriteWithFile:@"UI/tweet_button.png"];
     [ccsTweetButton setPosition:ccp(16 + ccsTweetButton.contentSize.width / 2 * scaleBase, 
-    								16 + (ccsTweetButton.contentSize.height / 2) * scaleBase )];
+    								size.height - (100 + ccsTweetButton.contentSize.height / 2) * scaleBase )];
     [ccsTweetButton setScale:scaleBase];
 	[self addChild:ccsTweetButton];
     
-	ccsRankingButton = [CCSprite spriteWithFile:@"UI/ranking.png"];
-    [ccsRankingButton setPosition:ccp(size.width - (16 + ccsTweetButton.contentSize.width / 2 * scaleBase)
-    								, 16 + (ccsRankingButton.contentSize.height / 2) * scaleBase )];
+	ccsRankingButton = [CCSprite spriteWithFile:@"UI/ranking_button.png"];
+    [ccsRankingButton setPosition:ccp(size.width - (16 + ccsTweetButton.contentSize.width / 2 * scaleBase),
+    								size.height - (100 + ccsRankingButton.contentSize.height / 2) * scaleBase )];
     [ccsRankingButton setScale:scaleBase];
 	[self addChild:ccsRankingButton];
     
@@ -155,6 +154,7 @@ CCSprite *title_buttons;
     location =[[CCDirector sharedDirector] convertToGL:location];
 
     if([self touchEndButton:ccsStartButton touchLocation:location]) {
+		self.isTouchEnabled = NO;		
 
         CGSize size = [[CCDirector sharedDirector] winSize];
         id riseUp = [CCEaseIn actionWithAction: [CCMoveBy actionWithDuration:0.5 position:ccp(0, size.height*2) ] rate:2 ];
@@ -213,6 +213,7 @@ CCSprite *title_buttons;
 }
 
 -(void)startGameScene:(ccTime)dt {
+	CCLOG(@"startGameScene");
 	[self removeAllChildrenWithCleanup:YES];
     [self setPosition:ccp(0,0)];
     [[CCLayerGame get] gameStart];
