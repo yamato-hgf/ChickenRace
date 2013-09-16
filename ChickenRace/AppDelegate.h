@@ -17,7 +17,6 @@
 	CCDirectorIOS	*director_;							// weak ref
 }
 
-+ (float) getScaleBase;
 + (float) getScaleFactor;
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) UINavigationController *navController;

@@ -34,6 +34,14 @@ typedef enum PartTypes : NSUInteger {
 @interface CCLayerGame : CCLayerExtension <GKAchievementViewControllerDelegate,
     GKLeaderboardViewControllerDelegate>
 {
+	// タイトル
+	CCLayer* cclTitle;
+	CCSprite *ccsStartButton;
+	CCSprite *ccsTweetButton;
+	CCSprite *ccsRankingButton;
+	BOOL flagCanTweet;
+
+	// ゲーム
 	CCLayer *layerUnit;
 
 	NSMutableArray *unitCtrls;
@@ -47,6 +55,8 @@ typedef enum PartTypes : NSUInteger {
 	CCSprite *ccsTouch;
 	bool isDispIzaTouch;
 
+	bool isFlash;
+
 	CCSprite *ccsFight;
 
 	CCSprite* ccsResult;
@@ -59,7 +69,8 @@ typedef enum PartTypes : NSUInteger {
     CCLayer *cclInfo;
 	CCLayer *cclSpark;
 
-	CCLabelTTF* cclScore;
+	CCSprite* ccsScoreBack;
+	CCLabelTTF* cclLastScore;
 	CCLabelTTF* cclResult;
 
 	float stateTimeCount;
@@ -82,6 +93,8 @@ typedef enum PartTypes : NSUInteger {
 	int gameCount;
 	float scores[NUM_OF_GAMES];
 
+	CCLayer *cclScores;
+
 	enum ResultType {
 		None,
 		Success,
@@ -97,9 +110,5 @@ typedef enum PartTypes : NSUInteger {
 +(CCScene *) scene;
 
 +(CCLayerGame*) get;
-
--(void) gameStart;
-
--(void) createDogStand;
 
 @end

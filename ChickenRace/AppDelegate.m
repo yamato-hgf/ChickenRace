@@ -9,17 +9,15 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "CCLayerLogo.h"
 #import "CCLayerGame.h"
+#import "Utility.h"
 
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
 
 BOOL isRetinaDisplay_;
-float scaleBase_;
 float scaleFactor_;
-float adBannerSize;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -61,12 +59,18 @@ float adBannerSize;
 
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	isRetinaDisplay_ = [director_ enableRetinaDisplay:YES];
+	[Utility setScreenScaleRate:director_.winSize.height/ 960];
+
+	if(director_.winSize.height > 960)
+		[Utility setAdBannerHeight:66];
+	else [Utility setAdBannerHeight:50];
+
 	if(isRetinaDisplay_) {
-		scaleBase_ = director_.winSize.height/ 480;
+		[Utility setSpriteScaleRate:director_.winSize.height/ 480];
 		scaleFactor_ = 0.5f;
 	}
 	else {
-		scaleBase_ = director_.winSize.height/ 960;
+		[Utility setSpriteScaleRate:director_.winSize.height/ 960];
 		scaleFactor_ = 1;
 	}
 //    [director_ setContentScaleFactor: scaleFactor_];
@@ -166,14 +170,10 @@ float adBannerSize;
 	[super dealloc];
 }
 
-+ (float) getScaleBase
-{
-	return scaleBase_;
-}
-
 + (float) getScaleFactor
 {
 	return scaleFactor_;
 }
+
 @end
 

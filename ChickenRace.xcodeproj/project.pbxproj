@@ -11,12 +11,12 @@
 		DD4474C517A4C21400130EFA /* Logo in Resources */ = {isa = PBXBuildFile; fileRef = DD4474C217A4C21400130EFA /* Logo */; };
 		DD4474C617A4C21400130EFA /* UI in Resources */ = {isa = PBXBuildFile; fileRef = DD4474C317A4C21400130EFA /* UI */; };
 		DD7FC5DF1762DA7B005CE980 /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = DD7FC5DE1762DA7B005CE980 /* Dog */; };
+		DDAA2D7C17E4A0930049BF2A /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = DDAA2D7B17E4A0930049BF2A /* Sounds */; };
 		DDB18E07179A5D8B00698660 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB18E06179A5D8B00698660 /* Default.png */; };
 		DDB18E09179A5DC500698660 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB18E08179A5DC500698660 /* Default@2x.png */; };
 		DDB18E0B179A5DD200698660 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB18E0A179A5DD200698660 /* Default-568h@2x.png */; };
 		DDB2D6F01744361A002DF131 /* CCLayerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */; };
 		DDC0424C171A998C0018B49C /* CCLayerGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0424B171A998C0018B49C /* CCLayerGame.m */; };
-		DDC0424F171B47E80018B49C /* CCLayerLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0424E171B47E80018B49C /* CCLayerLogo.m */; };
 		DDCB4A0C173FD63E00162812 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCB4A0A173FD61500162812 /* Accounts.framework */; };
 		DDCB4A0D173FD65900162812 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1566FF173EF6770016C9CB /* Twitter.framework */; };
 		DDCE6549171A057B00E1D457 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCE6548171A057B00E1D457 /* QuartzCore.framework */; };
@@ -142,9 +142,9 @@
 		DDCE66CC171A057E00E1D457 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66CB171A057E00E1D457 /* vec4.c */; };
 		DDCE66D1171A057E00E1D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66D0171A057E00E1D457 /* main.m */; };
 		DDCE66D4171A057E00E1D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66D3171A057E00E1D457 /* AppDelegate.m */; };
-		DDCE66EF171A466300E1D457 /* CCLayerTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE66EE171A466300E1D457 /* CCLayerTitle.m */; };
+		DDD00B6717D2269A00CACAE0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD00B6617D2269A00CACAE0 /* iAd.framework */; };
+		DDD00B6A17D4E41600CACAE0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD00B6917D4E41600CACAE0 /* Utility.m */; };
 		DDE793FE179591F0008504A0 /* IAdLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE793FD179591F0008504A0 /* IAdLayer.m */; };
-		DDE79400179592A2008504A0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE793FF179592A2008504A0 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +153,7 @@
 		DD4474C217A4C21400130EFA /* Logo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Logo; path = Resources/Logo; sourceTree = "<group>"; };
 		DD4474C317A4C21400130EFA /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UI; path = Resources/UI; sourceTree = "<group>"; };
 		DD7FC5DE1762DA7B005CE980 /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dog; path = Resources/Dog; sourceTree = "<group>"; };
+		DDAA2D7B17E4A0930049BF2A /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = Resources/Sounds; sourceTree = "<group>"; };
 		DDB18E06179A5D8B00698660 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DDB18E08179A5DC500698660 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DDB18E0A179A5DD200698660 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -160,8 +161,6 @@
 		DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerExtension.m; sourceTree = "<group>"; };
 		DDC0424A171A998C0018B49C /* CCLayerGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerGame.h; sourceTree = "<group>"; };
 		DDC0424B171A998C0018B49C /* CCLayerGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerGame.m; sourceTree = "<group>"; };
-		DDC0424D171B47E80018B49C /* CCLayerLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerLogo.h; sourceTree = "<group>"; };
-		DDC0424E171B47E80018B49C /* CCLayerLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerLogo.m; sourceTree = "<group>"; };
 		DDCB4A0A173FD61500162812 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		DDCE6545171A057B00E1D457 /* ChickenRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickenRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCE6548171A057B00E1D457 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -421,11 +420,11 @@
 		DDCE66D0171A057E00E1D457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDCE66D2171A057E00E1D457 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDCE66D3171A057E00E1D457 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DDCE66ED171A466300E1D457 /* CCLayerTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerTitle.h; sourceTree = "<group>"; };
-		DDCE66EE171A466300E1D457 /* CCLayerTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerTitle.m; sourceTree = "<group>"; };
+		DDD00B6617D2269A00CACAE0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		DDD00B6817D4E41600CACAE0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		DDD00B6917D4E41600CACAE0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		DDE793FC179591F0008504A0 /* IAdLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAdLayer.h; sourceTree = "<group>"; };
 		DDE793FD179591F0008504A0 /* IAdLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAdLayer.m; sourceTree = "<group>"; };
-		DDE793FF179592A2008504A0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,7 +432,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE79400179592A2008504A0 /* iAd.framework in Frameworks */,
+				DDD00B6717D2269A00CACAE0 /* iAd.framework in Frameworks */,
 				DDCB4A0D173FD65900162812 /* Twitter.framework in Frameworks */,
 				DDCB4A0C173FD63E00162812 /* Accounts.framework in Frameworks */,
 				DDCE6549171A057B00E1D457 /* QuartzCore.framework in Frameworks */,
@@ -457,7 +456,6 @@
 				DDB18E0A179A5DD200698660 /* Default-568h@2x.png */,
 				DDB18E08179A5DC500698660 /* Default@2x.png */,
 				DDB18E06179A5D8B00698660 /* Default.png */,
-				DDE793FF179592A2008504A0 /* iAd.framework */,
 				DDCE655A171A057B00E1D457 /* ChickenRace */,
 				DDCE6547171A057B00E1D457 /* Frameworks */,
 				DDCE6546171A057B00E1D457 /* Products */,
@@ -475,6 +473,7 @@
 		DDCE6547171A057B00E1D457 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDD00B6617D2269A00CACAE0 /* iAd.framework */,
 				DDCB4A0A173FD61500162812 /* Accounts.framework */,
 				DD1566FF173EF6770016C9CB /* Twitter.framework */,
 				DDCE6548171A057B00E1D457 /* QuartzCore.framework */,
@@ -506,6 +505,7 @@
 		DDCE655B171A057C00E1D457 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDAA2D7B17E4A0930049BF2A /* Sounds */,
 				DD4474C117A4C21400130EFA /* Game */,
 				DD4474C217A4C21400130EFA /* Logo */,
 				DD4474C317A4C21400130EFA /* UI */,
@@ -873,15 +873,13 @@
 		DDCE66E6171A460100E1D457 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DDD00B6817D4E41600CACAE0 /* Utility.h */,
+				DDD00B6917D4E41600CACAE0 /* Utility.m */,
 				DDE793FB179591F0008504A0 /* iAd */,
 				DDB2D6EE1744361A002DF131 /* CCLayerExtension.h */,
 				DDB2D6EF1744361A002DF131 /* CCLayerExtension.m */,
-				DDCE66ED171A466300E1D457 /* CCLayerTitle.h */,
-				DDCE66EE171A466300E1D457 /* CCLayerTitle.m */,
 				DDC0424A171A998C0018B49C /* CCLayerGame.h */,
 				DDC0424B171A998C0018B49C /* CCLayerGame.m */,
-				DDC0424D171B47E80018B49C /* CCLayerLogo.h */,
-				DDC0424E171B47E80018B49C /* CCLayerLogo.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -964,6 +962,7 @@
 				DD4474C417A4C21400130EFA /* Game in Resources */,
 				DD4474C517A4C21400130EFA /* Logo in Resources */,
 				DD4474C617A4C21400130EFA /* UI in Resources */,
+				DDAA2D7C17E4A0930049BF2A /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,11 +1075,10 @@
 				DDCE66CC171A057E00E1D457 /* vec4.c in Sources */,
 				DDCE66D1171A057E00E1D457 /* main.m in Sources */,
 				DDCE66D4171A057E00E1D457 /* AppDelegate.m in Sources */,
-				DDCE66EF171A466300E1D457 /* CCLayerTitle.m in Sources */,
 				DDC0424C171A998C0018B49C /* CCLayerGame.m in Sources */,
-				DDC0424F171B47E80018B49C /* CCLayerLogo.m in Sources */,
 				DDB2D6F01744361A002DF131 /* CCLayerExtension.m in Sources */,
 				DDE793FE179591F0008504A0 /* IAdLayer.m in Sources */,
+				DDD00B6A17D4E41600CACAE0 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
