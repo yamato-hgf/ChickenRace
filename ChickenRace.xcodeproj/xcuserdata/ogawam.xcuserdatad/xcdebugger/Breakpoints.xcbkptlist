@@ -24,8 +24,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "157"
          endingLineNumber = "157"
-         landmarkName = "+scene"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -37,8 +37,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "152"
          endingLineNumber = "152"
-         landmarkName = "+scene"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -159,8 +159,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "163"
          endingLineNumber = "163"
-         landmarkName = "+scene"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -185,7 +185,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "259"
          endingLineNumber = "259"
-         landmarkName = "-onEnter"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -198,7 +198,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "258"
          endingLineNumber = "258"
-         landmarkName = "-onEnter"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -235,7 +235,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "270"
          endingLineNumber = "270"
-         landmarkName = "-onCheckTweetStatus"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -272,7 +272,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "379"
          endingLineNumber = "379"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -285,7 +285,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "382"
          endingLineNumber = "382"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -298,7 +298,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "490"
          endingLineNumber = "490"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -311,7 +311,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "583"
          endingLineNumber = "583"
-         landmarkName = "-dispTitle"
+         landmarkName = "-createUnitParts:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -324,7 +324,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "574"
          endingLineNumber = "574"
-         landmarkName = "-dispTitle"
+         landmarkName = "-createUnitParts:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -337,7 +337,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "571"
          endingLineNumber = "571"
-         landmarkName = "-dispTitle"
+         landmarkName = "-createUnitParts:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -350,8 +350,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "321"
          endingLineNumber = "321"
-         landmarkName = "-createDogStand"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -363,7 +363,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "323"
          endingLineNumber = "323"
-         landmarkName = "-createDogStand"
+         landmarkName = "-setFlagCanTweet:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -376,7 +376,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "316"
          endingLineNumber = "316"
-         landmarkName = "-createDogStand"
+         landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -389,7 +389,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "545"
          endingLineNumber = "545"
-         landmarkName = "-createEyeFlash:rotation:"
+         landmarkName = "-createUnitParts:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -415,7 +415,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "371"
          endingLineNumber = "371"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -428,7 +428,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "378"
          endingLineNumber = "378"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -454,7 +454,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "708"
          endingLineNumber = "708"
-         landmarkName = "-hideIzaTouch"
+         landmarkName = "-gameStart"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -467,7 +467,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "494"
          endingLineNumber = "494"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -480,7 +480,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "493"
          endingLineNumber = "493"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -506,7 +506,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "492"
          endingLineNumber = "492"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -519,8 +519,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "507"
          endingLineNumber = "507"
-         landmarkName = "-createUnitParts:"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -532,7 +532,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "512"
          endingLineNumber = "512"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -558,8 +558,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "742"
          endingLineNumber = "742"
-         landmarkName = "@implementation CCLayerGame"
-         landmarkType = "3">
+         landmarkName = "-dispIzaTouch"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -571,7 +571,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "450"
          endingLineNumber = "450"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -584,7 +584,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "458"
          endingLineNumber = "458"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -597,7 +597,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "473"
          endingLineNumber = "473"
-         landmarkName = "-findUnitPartSpriteByType:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -610,7 +610,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "451"
          endingLineNumber = "451"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -623,7 +623,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "460"
          endingLineNumber = "460"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -636,7 +636,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "452"
          endingLineNumber = "452"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -649,7 +649,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "476"
          endingLineNumber = "476"
-         landmarkName = "-findUnitPartSpriteByType:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -662,7 +662,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "461"
          endingLineNumber = "461"
-         landmarkName = "-createDogBite"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -675,7 +675,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "487"
          endingLineNumber = "487"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -688,7 +688,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "521"
          endingLineNumber = "521"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -701,7 +701,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "538"
          endingLineNumber = "538"
-         landmarkName = "-createEyeFlash:rotation:"
+         landmarkName = "-findUnitPartSpriteByType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -714,7 +714,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "506"
          endingLineNumber = "506"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -727,7 +727,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "502"
          endingLineNumber = "502"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -740,7 +740,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "503"
          endingLineNumber = "503"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -753,7 +753,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "518"
          endingLineNumber = "518"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -766,7 +766,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "522"
          endingLineNumber = "522"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -779,7 +779,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "505"
          endingLineNumber = "505"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogLauph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -983,7 +983,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "526"
          endingLineNumber = "526"
-         landmarkName = "-createUnitParts:"
+         landmarkName = "-createDogBite"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -996,7 +996,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "669"
          endingLineNumber = "669"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1022,7 +1022,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "668"
          endingLineNumber = "668"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1035,7 +1035,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "265"
          endingLineNumber = "265"
-         landmarkName = "-setFlagCanTweet:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1048,7 +1048,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "630"
          endingLineNumber = "630"
-         landmarkName = "-gameStart"
+         landmarkName = "-dispTitle"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1074,7 +1074,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "401"
          endingLineNumber = "401"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1146,7 +1146,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "53"
          endingLineNumber = "53"
-         landmarkName = "@implementation CCLayerGame"
+         landmarkName = "@implementation ResultData"
          landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1181,7 +1181,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "290"
          endingLineNumber = "290"
-         landmarkName = "-createDogStand"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1194,7 +1194,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "325"
          endingLineNumber = "325"
-         landmarkName = "-createDogStand"
+         landmarkName = "-setFlagCanTweet:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1220,7 +1220,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "291"
          endingLineNumber = "291"
-         landmarkName = "-createDogStand"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1233,8 +1233,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "294"
          endingLineNumber = "294"
-         landmarkName = "-createDogStand"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1246,7 +1246,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "676"
          endingLineNumber = "676"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1259,7 +1259,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "683"
          endingLineNumber = "683"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1272,7 +1272,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "674"
          endingLineNumber = "674"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1285,7 +1285,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "684"
          endingLineNumber = "684"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1298,7 +1298,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "272"
          endingLineNumber = "272"
-         landmarkName = "-onCheckTweetStatus"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1311,7 +1311,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "275"
          endingLineNumber = "275"
-         landmarkName = "-onCheckTweetStatus"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1337,7 +1337,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "765"
          endingLineNumber = "765"
-         landmarkName = "-readyState:"
+         landmarkName = "-hideIzaTouch"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1350,7 +1350,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "744"
          endingLineNumber = "744"
-         landmarkName = "-readyState:"
+         landmarkName = "-dispIzaTouch"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1363,7 +1363,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "745"
          endingLineNumber = "745"
-         landmarkName = "-readyState:"
+         landmarkName = "-dispIzaTouch"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1376,7 +1376,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "754"
          endingLineNumber = "754"
-         landmarkName = "-readyState:"
+         landmarkName = "-dispIzaTouch"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1415,7 +1415,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "284"
          endingLineNumber = "284"
-         landmarkName = "-createDogStand"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1428,7 +1428,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "300"
          endingLineNumber = "300"
-         landmarkName = "-createDogStand"
+         landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1441,7 +1441,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "301"
          endingLineNumber = "301"
-         landmarkName = "-createDogStand"
+         landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1454,7 +1454,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "283"
          endingLineNumber = "283"
-         landmarkName = "-createDogStand"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1467,7 +1467,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "370"
          endingLineNumber = "370"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1480,7 +1480,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "289"
          endingLineNumber = "289"
-         landmarkName = "-createDogStand"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1571,8 +1571,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "416"
          endingLineNumber = "416"
-         landmarkName = "-createDogLauph"
-         landmarkType = "5">
+         landmarkName = "@implementation CCLayerGame"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1584,7 +1584,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "413"
          endingLineNumber = "413"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1597,7 +1597,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "410"
          endingLineNumber = "410"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1610,7 +1610,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "385"
          endingLineNumber = "385"
-         landmarkName = "-createDogLauph"
+         landmarkName = "-createDogStand"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1634,7 +1634,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "536"
          endingLineNumber = "536"
-         landmarkName = "-createEyeFlash:rotation:"
+         landmarkName = "-findUnitPartSpriteByType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1642,12 +1642,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChickenRace/Classes/CCLayerGame.m"
-         timestampString = "400904443.362919"
+         timestampString = "401459097.024025"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1199"
-         endingLineNumber = "1199"
-         landmarkName = "-changeResultState:"
+         startingLineNumber = "1196"
+         endingLineNumber = "1196"
+         landmarkName = "-changeResultState"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1655,13 +1655,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChickenRace/Classes/CCLayerGame.m"
-         timestampString = "400904443.362919"
+         timestampString = "401459097.024025"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1206"
-         endingLineNumber = "1206"
-         landmarkName = "@implementation CCLayerGame"
-         landmarkType = "3">
+         startingLineNumber = "1203"
+         endingLineNumber = "1203"
+         landmarkName = "-changeResultState"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1673,7 +1673,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "688"
          endingLineNumber = "688"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1697,7 +1697,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "689"
          endingLineNumber = "689"
-         landmarkName = "-dispIzaTouch"
+         landmarkName = "-dispTweetRank"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1710,7 +1710,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "872"
          endingLineNumber = "872"
-         landmarkName = "-calcAvoidTime"
+         landmarkName = "-readyState:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1723,7 +1723,98 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "811"
          endingLineNumber = "811"
-         landmarkName = "-gameState:"
+         landmarkName = "-changeReadyState:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "401459097.024025"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1328"
+         endingLineNumber = "1328"
+         landmarkName = "-ccTouchBegan:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "401301743.278046"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "820"
+         endingLineNumber = "820"
+         landmarkName = "-changeReadyState:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerExtension.m"
+         timestampString = "401303234.965247"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-touchMovedButton:touchLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerExtension.m"
+         timestampString = "401303248.109415"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-touchMovedButton:touchLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "401459097.024025"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1257"
+         endingLineNumber = "1257"
+         landmarkName = "-changeResultState"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "401460380.006122"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1072"
+         endingLineNumber = "1072"
+         landmarkName = "-biteState:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChickenRace/Classes/CCLayerGame.m"
+         timestampString = "401460435.285605"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "991"
+         endingLineNumber = "991"
+         landmarkName = "-biteState:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

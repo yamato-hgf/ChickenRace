@@ -59,7 +59,6 @@ typedef enum PartTypes : NSUInteger {
 
 	CCSprite *ccsFight;
 
-	CCSprite* ccsResult;
 	CCSprite* ccsRetry;
 	CCSprite* ccsNext;
 	CCSprite* ccsHome;
@@ -71,7 +70,6 @@ typedef enum PartTypes : NSUInteger {
 
 	CCSprite* ccsScoreBack;
 	CCLabelTTF* cclLastScore;
-	CCLabelTTF* cclResult;
 
 	float stateTimeCount;
 
@@ -89,6 +87,12 @@ typedef enum PartTypes : NSUInteger {
 	NSTimeInterval elapsedTime;
 
 	float avoidTime;
+	float biteAngle;
+	float timeScale;
+
+	float biteEffSec;
+	float biteEffRealSec;
+	CCSprite* biteEff[2];
 
 	int gameCount;
 	float scores[NUM_OF_GAMES];
@@ -100,8 +104,11 @@ typedef enum PartTypes : NSUInteger {
 		Success,
 		TooFast,
 		TooRate,
-		TooFar
+		TooFar,
+		Max
 	} resultType;
+
+	NSArray* resultMessages[4];
 
 	float biteTimeCount;
 }

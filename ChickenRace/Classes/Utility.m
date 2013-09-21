@@ -6,7 +6,7 @@
 //  Copyright __MyCompanyName__ 2013年. All rights reserved.
 //
 
-#import "cocos2d    .h"
+#import "cocos2d.h"
 
 #import "AppDelegate.h"
 
