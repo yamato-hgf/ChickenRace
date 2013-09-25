@@ -59,18 +59,18 @@ float scaleFactor_;
 
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	isRetinaDisplay_ = [director_ enableRetinaDisplay:YES];
-	[Utility setScreenScaleRate:director_.winSize.height/ 960];
+	[Utility setScreenScaleRate:director_.winSize.width/ 640];
 
 	if(director_.winSize.height > 960)
 		[Utility setAdBannerHeight:66];
 	else [Utility setAdBannerHeight:50];
 
 	if(isRetinaDisplay_) {
-		[Utility setSpriteScaleRate:director_.winSize.height/ 480];
+		[Utility setSpriteScaleRate:director_.winSize.width/ 320];
 		scaleFactor_ = 0.5f;
 	}
 	else {
-		[Utility setSpriteScaleRate:director_.winSize.height/ 960];
+		[Utility setSpriteScaleRate:director_.winSize.width/ 640];
 		scaleFactor_ = 1;
 	}
 //    [director_ setContentScaleFactor: scaleFactor_];

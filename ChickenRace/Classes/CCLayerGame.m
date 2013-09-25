@@ -210,6 +210,8 @@ static CCLayerGame* instance;
 #define SE_JINGLE_MISS @"Sounds/se_jingle_miss.mp3"
 #define SE_NEW_RECORDS @"Sounds/new_records.mp3"
 
+const float bgmVolume = 0.5f;
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -259,7 +261,7 @@ static CCLayerGame* instance;
 
         background = [CCSprite spriteWithFile:@"Game/background.png"];
         background.position = ccp(winSize.width/2, 0);
-        background.scale = spriteScaleRate - fmod(spriteScaleRate, 0.5f);
+        background.scale = spriteScaleRate - fmod(spriteScaleRate, bgmVolume);
         background.anchorPoint = ccp(0.5f,0);
         // add the label as a child to this Layer
         [self addChild: background];
@@ -273,7 +275,7 @@ static CCLayerGame* instance;
         cclInfo = [CCLayer node];
         [self addChild:cclInfo z:10];
 
-        [self resetScores];
+        [self clearScoreLogs];
 
         IAdLayer *adLayer = [IAdLayer nodeWithOrientation:kAdOrientationPortrait
                                                  position:kAdPositionTop];
@@ -674,7 +676,7 @@ static CCLayerGame* instance;
     ccsTweetButton = [CCSprite spriteWithFile:@"UI/tweet_button.png"];
     resSize = ccsTweetButton.contentSize;
     pos.x = [Utility s2w:16] + [Utility s2r:resSize.width/2];
-    pos.y = winSize.height - adHeight - [Utility s2w:16] - [Utility s2r:resSize.height/2];
+    pos.y = winSize.height - adHeight - [Utility s2w:540] - [Utility s2r:resSize.height/2];
     [ccsTweetButton setPosition:pos];
     [ccsTweetButton setScale:scaleBaseSprite];
     [cclInfo addChild:ccsTweetButton z:1];
@@ -682,7 +684,7 @@ static CCLayerGame* instance;
     ccsRankingButton = [CCSprite spriteWithFile:@"UI/ranking_button.png"];
     resSize = ccsRankingButton.contentSize;
     pos.x = winSize.width - [Utility s2w:16] - [Utility s2r:resSize.width/2];
-    pos.y = winSize.height - adHeight - [Utility s2w:16] - [Utility s2r:resSize.height/2];
+    pos.y = winSize.height - adHeight - [Utility s2w:540] - [Utility s2r:resSize.height/2];
     [ccsRankingButton setPosition:pos];
     [ccsRankingButton setScale:scaleBaseSprite];
     [cclInfo addChild:ccsRankingButton z:1];    
@@ -690,10 +692,10 @@ static CCLayerGame* instance;
 
 - (void) gameStart
 {
-    [cclInfo removeAllChildrenWithCleanup:YES];
     ccsStartButton = 
     ccsTweetButton = 
     ccsRankingButton = NULL;
+    [cclInfo removeAllChildrenWithCleanup:YES];
     [cclInfo setPosition:ccp(0,0)];
 
     // ask director for the window size
@@ -782,17 +784,40 @@ static CCLayerGame* instance;
 		[self removeChild:ccsTutorial cleanup:YES];
 		[self removeChild:cclFade cleanup:YES];
 
-		[self changeReadyState: false];
+		[self changeReadyState];
 
 		isTouchBegan = false;
 	}
 }
 
-- (void) changeReadyState: (bool) retry
+- (void) changeReadyState
 {
     resultType = None;
 
-    [self resetScores];
+    ccsTweetButton =
+    ccsRankingButton = nil;
+
+    [self dispScoreLogs];
+	[self dispIzaTouch];
+	[self createDogStand];   
+
+	[self unschedule:@selector(tutorialState:)];
+	[self schedule:@selector(readyState:)];	
+}
+
+// これまでのスコアの表示をクリア
+- (void) clearScoreLogs
+{
+    if(cclScores != NULL)
+        [self removeChild:cclScores cleanup:YES];
+    cclScores = [CCLayer node];
+    [self addChild:cclScores z:15];    
+}
+
+// これまでのスコアの表示
+-(void) dispScoreLogs
+{
+    [self clearScoreLogs];
 
     CGSize resSize;
     CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -825,12 +850,6 @@ static CCLayerGame* instance;
         [cclScore setAnchorPoint: ccp(1,0.5f)];
         [cclScores addChild:cclScore];
     }
-
-	[self dispIzaTouch];
-	[self createDogStand];   
-
-	[self unschedule:@selector(tutorialState:)];
-	[self schedule:@selector(readyState:)];	
 }
 
 const CGPoint readyTouchPoint = { 0, -80 };
@@ -955,10 +974,14 @@ const float biteDogScale = 2.0f;
 const float biteDogHeight = -64.0f;
 const float biteHeadOpenHeight = 64;
 const float biteAgoOpenHeight = -128;
+
 const float biteTimeSec = 0.5f;
-const float biteWaitTimeSec = 2.0f;
+const float biteSparkSec = 0.45f;
+const float biteWaitTimeSec = 1.5f;
 const float biteZoomTimeRate = 0.1f;
-const float bitePlayTimeSec = 0.02f;
+const float bitePlayTimeSec = 0.49f;
+const float biteReactionRate = -0.01f;
+
 const float slowMotionBegin = 0.5f;
 const float slowMotionMax = 0.5f;
 const float slowMotionMin = 0.01f;
@@ -992,10 +1015,19 @@ const float slowMotionMin = 0.01f;
 
 	biteTimeCount += dt;
 
-	float rate = min(1, ((bitePlayTimeSec + biteTimeCount) / biteTimeSec));
+	float rate = 0;
+    if(biteTimeCount < bitePlayTimeSec) {
+        rate = (biteTimeCount / bitePlayTimeSec);
+    }
+    else {
+        rate = (biteTimeCount - bitePlayTimeSec) / (biteWaitTimeSec - bitePlayTimeSec);
+        rate = 1 + (biteReactionRate * sinf(M_PI_2 * rate));
+    }
     rate = 1 - sin(M_PI_2 + M_PI_2 * rate);
     rate = pow(rate, 4);
 	rate = min(max(rate, 0), 1);
+
+    CCLOG(@"btc %f", rate);
 
 	float zoomRate = min(1, rate / biteZoomTimeRate);
     float scaleFactor = [AppController getScaleFactor];
@@ -1053,7 +1085,7 @@ const float slowMotionMin = 0.01f;
 
 	case Success:
         cclLastScore.string = [NSString stringWithFormat:@"%f sec", [self calcAvoidTime]];
-	    if(bitePlayTimeSec + biteTimeCount > biteTimeSec) {
+	    if(biteTimeCount > bitePlayTimeSec) {
 	    	if(cclSpark == NULL) {
 
                 [self dispBiteEffect];
@@ -1079,42 +1111,67 @@ const float slowMotionMin = 0.01f;
 }
 
 -(void) dispBiteEffect {
+//    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    float spriteScaleRate = [Utility spriteScaleRate];
+    
+    CCSprite* parent = [self findUnitPartSpriteByType:PartTypeChin];
+    CGPoint pos = parent.position;
+    pos = [parent.parent convertToWorldSpace:pos];
+    
+    float radian = biteAngle / 180 * M_PI;
+    float offset = -48;
+    pos = ccpAdd(pos, ccp(offset*sin(radian), offset*cos(radian)));
+
     cclSpark = [CCLayer node];
+    cclSpark.position = pos;
+    cclSpark.anchorPoint = ccp(0,0);
+    cclSpark.rotation = biteAngle;
+    cclSpark.scale = spriteScaleRate;
     [self addChild: cclSpark z:5];
+
     biteEffSec = 0;
     biteEffRealSec = 0;
 
-    CGSize winSize = [[CCDirector sharedDirector] winSize];         
-    float spriteScaleRate = [Utility spriteScaleRate];
-    
     for(int i = 0; i < 2; ++i) {
         CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark01.png"];
-        sprite.position = ccp(winSize.width/2, winSize.height/2-64);
-        [sprite setAnchorPoint:ccp(0.5,0.5)];
-        [sprite setScale: spriteScaleRate];
-        [sprite setRotation: -biteAngle+ 90+ 180 * i];
+        sprite.position = ccp([Utility s2r:i == 0 ? 32:-32], 0);
+        [sprite setAnchorPoint:ccp(0,0.5)];
+        [sprite setRotation: 180 * i];
         [cclSpark addChild: sprite];
         biteEff[i] = sprite;
     }
 
-    [self schedule:@selector(updateBiteEffect:)];
+    CCSprite* sprite = [CCSprite spriteWithFile:@"Game/spark02.png"];
+    [cclSpark addChild: sprite];
+    effBiteSplash = sprite;
+
+    [self schedule:@selector(playBiteEffect:)];
 }
 
--(void) updateBiteEffect:(float)dt {
+-(void) playBiteEffect:(float)dt {
     float spriteScaleRate = [Utility spriteScaleRate];
     
+    [SimpleAudioEngine sharedEngine].backgroundMusicVolume = bgmVolume * timeScale;
     biteEffSec += dt * timeScale;
-    if(biteEffSec < 0.1) {
-        float rate = (biteEffSec / 0.1f);
+    if(biteEffSec < 1.f) {
+        float rate = (biteEffSec / 1.f);
+        float rateEaseOut = 1 - sin(M_PI * (0.5f + 0.5f * rate));
+        effBiteSplash.scale = spriteScaleRate * (1+rateEaseOut);
+        effBiteSplash.opacity = min((int)(255 * (1-rate)), 255);
 
+        rate = min(1, biteEffSec / 0.25f);
+        rateEaseOut = 1 - sin(M_PI * (0.5f + 0.5f * rate));
         for(int i = 0; i < 2; ++i) {
-            biteEff[i].scaleX = spriteScaleRate * (1 + (4 - 1) * rate);
+
+            biteEff[i].scaleX = spriteScaleRate * (1 + (4 - 1) * rateEaseOut);
             biteEff[i].scaleY = spriteScaleRate * (1 + (0 - 1) * rate);
             biteEff[i].opacity = min((int)(255 * ((1-rate) * 2)), 255);
         }
     }
     else {
         [self removeChild: cclSpark cleanup:YES];
+        cclSpark = nil;
+
         [self unschedule:@selector(updateBiteEffect:)];
     }
 
@@ -1157,48 +1214,8 @@ const float slowMotionMin = 0.01f;
             resultMessage = resultMessages[1];
         }
 
+        [self dispNextButton];
         gameCount++;
-        if(gameCount < NUM_OF_GAMES) {
-            ccsNext = [CCSprite spriteWithFile:@"UI/next_button.png"];
-            CGSize resSize = [ccsNext contentSize];
-            ccsNext.position = ccp(winSize.width/2, [Utility s2w:64] + [Utility s2r:resSize.height/2]);
-            ccsNext.scale = spriteScaleRate;
-
-            [ccsNext runAction: 
-                [CCRepeatForever actionWithAction: 
-                    [CCSequence actions: 
-                        [CCEaseInOut actionWithAction: 
-                            [CCScaleTo actionWithDuration:0.5f scale:spriteScaleRate * 0.9f] 
-                            rate:3 
-                        ], 
-                        [CCEaseInOut actionWithAction: 
-                            [CCScaleTo actionWithDuration:0.5f scale:spriteScaleRate] 
-                            rate:3 
-                        ], 
-                        nil
-                    ] 
-                ]
-            ];        
-            [cclInfo addChild:ccsNext];
-        }
-        else {
-            GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
-            float score = 0;
-            for(int i = 0; i < NUM_OF_GAMES; ++i)
-                if(scores[i] >= 0)
-                    score += scores[i];
-            scoreReporter.value = score * 1000000;
-            [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {}]; 
-
-            NSString *nssTotal = [NSString stringWithFormat:@"トータルスコア\r%f sec", score];
-            CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:nssTotal fontName:@"Marker Felt" fontSize:16];
-            cclTotal.position = CGPointMake(winSize.width/2, winSize.height/2- 80);
-            cclTotal.scale = screenScaleRate;
-            cclTotal.color = ccc3(0,0,0);
-            [cclInfo addChild:cclTotal];    
-
-            [self dispTweetRank];
-        }
 		break;
 	case TooFar:
 
@@ -1258,20 +1275,20 @@ const float slowMotionMin = 0.01f;
     [cclInfo addChild:ccsCloud];
 
     NSString* resultText = resData->jpMsg;
-    CCLabelTTF* cclMsg = [CCLabelTTF labelWithString:resultText fontName:@"Arial Rounded MT Bold" fontSize:16];
+    CCLabelTTF* cclMsg = [CCLabelTTF labelWithString:resultText fontName:@"HiraKakuProN-W6" fontSize:40];
     cclMsg.position = CGPointMake(winSize.width/2, [Utility s2w:infoHeight+50]);
-    cclMsg.scale = screenScaleRate * 2;
+    cclMsg.scale = 2 * screenScaleRate;
     cclMsg.color = ccc3(0,0,0);
     [cclMsg runAction:
         [CCEaseOut actionWithAction:
-            [CCScaleTo actionWithDuration:0.25 scale:spriteScaleRate]
+            [CCScaleTo actionWithDuration:0.25 scale:screenScaleRate]
             rate: 4
         ]
     ];    
     [cclInfo addChild:cclMsg];
 
     if(resultSubMessage != NULL) {
-        CCLabelTTF* cclSubMsg = [CCLabelTTF labelWithString:resultSubMessage fontName:@"Arial Rounded MT Bold" fontSize:12];
+        CCLabelTTF* cclSubMsg = [CCLabelTTF labelWithString:resultSubMessage fontName:@"HiraKakuProN-W6" fontSize:24];
         cclSubMsg.position = CGPointMake(winSize.width-[Utility s2w:16],[Utility s2w:620]);
         cclSubMsg.scale = screenScaleRate;
         cclSubMsg.anchorPoint = ccp(1,0.5f);
@@ -1287,7 +1304,15 @@ const float slowMotionMin = 0.01f;
         [ccsResult runAction: resultActions];
 //    [cclInfo addChild:ccsResult];
 
-	ccsHome = [CCSprite spriteWithFile:@"UI/home_button.png"];
+    [self hideIzaTouch];
+    [self dispRetryHome];
+}
+
+-(void) dispRetryHome {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    float spriteScaleRate = [Utility spriteScaleRate];
+
+    ccsHome = [CCSprite spriteWithFile:@"UI/home_button.png"];
     ccsHome.position = ccp(winSize.width - winSize.width/8, winSize.width/8);
     ccsHome.scale = spriteScaleRate;
     [cclInfo addChild:ccsHome]; 
@@ -1296,8 +1321,73 @@ const float slowMotionMin = 0.01f;
     ccsRetry.position = ccp(winSize.width/8, winSize.width/8);
     ccsRetry.scale = spriteScaleRate;
     [cclInfo addChild:ccsRetry];
+}
+
+-(void) changeTotalResultState {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    float screenScaleRate = [Utility screenScaleRate];
+
+    [self dispScoreLogs];
+    [self dispRetryHome];
+    [self dispTweetRank];
+
+    // 記録更新
+    [[SimpleAudioEngine sharedEngine] playEffect:SE_NEW_RECORDS];
+
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
+
+    float score = 0;
+    for(int i = 0; i < NUM_OF_GAMES; ++i)
+        if(scores[i] >= 0)
+            score += scores[i];
+    scoreReporter.value = score * 1000000;
+    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {}]; 
+
+    CGPoint pos = CGPointMake(winSize.width/2, [Utility s2w:480] );
+
+    ccsScoreBack = [CCSprite spriteWithFile:@"UI/score_back.png"];
+    ccsScoreBack.position = pos;
+    [ccsScoreBack setScale:[Utility s2r:2]];
+    [ccsScoreBack setOpacity:196];
+    [cclInfo addChild:ccsScoreBack];
     
-    [self hideIzaTouch];
+    CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:@"トータルスコア" fontName:@"HiraKakuProN-W6" fontSize:48];
+    cclTotal.position = ccpAdd(pos, ccp(0,[Utility s2w:32]));
+    cclTotal.scale = screenScaleRate;
+    [cclInfo addChild:cclTotal];    
+
+    cclLastScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f sec", score] fontName:@"Arial Rounded MT Bold" fontSize:64];
+    cclLastScore.position = ccpAdd(pos, ccp(0,[Utility s2w:-32]));
+    cclLastScore.scale = screenScaleRate;
+    [cclInfo addChild:cclLastScore];
+    gameCount = 0;   
+}
+
+// 次へボタンを表示する
+-(void) dispNextButton
+{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];        
+    ccsNext = [CCSprite spriteWithFile:@"UI/next_button.png"];
+    CGSize resSize = [ccsNext contentSize];
+    ccsNext.position = ccp(winSize.width/2, [Utility s2w:64] + [Utility s2r:resSize.height/2]);
+    ccsNext.scale = [Utility s2r:1];
+
+    [ccsNext runAction: 
+        [CCRepeatForever actionWithAction: 
+            [CCSequence actions: 
+                [CCEaseInOut actionWithAction: 
+                    [CCScaleTo actionWithDuration:0.5f scale:[Utility s2r:0.9f]] 
+                    rate:3 
+                ], 
+                [CCEaseInOut actionWithAction: 
+                    [CCScaleTo actionWithDuration:0.5f scale:[Utility s2r:1]] 
+                    rate:3 
+                ], 
+                nil
+            ] 
+        ]
+    ];        
+    [cclInfo addChild:ccsNext]; 
 }
 
 const float inputCancelTime = 0.5f;
@@ -1356,8 +1446,6 @@ const float inputCancelTime = 0.5f;
 
 -(void) hideResult {
 	[cclInfo removeAllChildrenWithCleanup:YES];
-	[self removeChild:cclSpark cleanup:YES];
-	cclSpark = NULL;
 	ccsHome = NULL;
     ccsNext = NULL;
 	ccsRetry = NULL;
@@ -1473,10 +1561,13 @@ const float inputCancelTime = 0.5f;
         [[SimpleAudioEngine sharedEngine] playEffect:SE_BUTTON_START];
 
         [self hideResult];
-        [background setScale:spriteScaleRate];
-        [layerUnit setScale:1];
-        [layerUnit setPosition: CGPointZero];
-        [self changeReadyState: true];      
+        if(gameCount < NUM_OF_GAMES) {
+            [background setScale:spriteScaleRate];
+            [layerUnit setScale:1];
+            [layerUnit setPosition: CGPointZero];            
+            [self changeReadyState];  
+        }    
+        else [self changeTotalResultState];
     }
     if([self touchEndButton:ccsRetry touchLocation:location]) {
 
@@ -1487,8 +1578,8 @@ const float inputCancelTime = 0.5f;
         [background setScale:spriteScaleRate];
         [layerUnit setScale:1];
         [layerUnit setPosition: CGPointZero];
-		[self changeReadyState: true];    	
-        [self resetScores];
+		[self changeReadyState];    	
+        [self clearScoreLogs];
         gameCount = 0;
     }
     if([self touchEndButton:ccsHome touchLocation:location]) {
@@ -1502,20 +1593,12 @@ const float inputCancelTime = 0.5f;
         [layerUnit setScale:1];
         [layerUnit setPosition: CGPointZero];
         [self dispTitle];
-        [self resetScores];
-            gameCount = 0;
+        [self clearScoreLogs];
+        gameCount = 0;
     }
 
 	isTouchEnd = true;
 	inputCount = inputCancelTime;
-}
-
-- (void) resetScores
-{
-    if(cclScores != NULL)
-        [self removeChild:cclScores cleanup:YES];
-    cclScores = [CCLayer node];
-    [self addChild:cclScores z:5];    
 }
 
 // on "dealloc" you need to release all your retained objects

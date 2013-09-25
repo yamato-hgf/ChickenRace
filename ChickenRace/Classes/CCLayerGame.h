@@ -93,6 +93,7 @@ typedef enum PartTypes : NSUInteger {
 	float biteEffSec;
 	float biteEffRealSec;
 	CCSprite* biteEff[2];
+	CCSprite* effBiteSplash;
 
 	int gameCount;
 	float scores[NUM_OF_GAMES];
