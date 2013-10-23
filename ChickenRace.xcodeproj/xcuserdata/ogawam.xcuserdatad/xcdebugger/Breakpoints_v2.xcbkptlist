@@ -270,12 +270,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "-onCheckTweetStatus"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -332,107 +332,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "-createDogStand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
-            landmarkName = "-createDogStand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "583"
-            endingLineNumber = "583"
-            landmarkName = "-createUnitParts:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574"
-            landmarkName = "-createUnitParts:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
-            landmarkName = "-createUnitParts:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "-onEnter"
             landmarkType = "5">
          </BreakpointContent>
@@ -444,27 +348,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
-            landmarkName = "@implementation CCLayerGame"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
             landmarkName = "-onEnter"
             landmarkType = "5">
          </BreakpointContent>
@@ -476,123 +364,219 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "545"
-            endingLineNumber = "545"
-            landmarkName = "-createUnitParts:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
-            landmarkName = "-createDogStand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "-createDogStand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "-createDogStand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
-            landmarkName = "@implementation CCLayerGame"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "708"
-            endingLineNumber = "708"
-            landmarkName = "-gameStart"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "493"
             endingLineNumber = "493"
+            landmarkName = "-createDogLauph"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
+            landmarkName = "-createDogLauph"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "-getAtlasRect:sprite:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
+            landmarkName = "-onEnter"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "-onEnter"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "720"
+            endingLineNumber = "720"
+            landmarkName = "-dispTitle"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
+            landmarkName = "-createDogLauph"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -620,11 +604,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "492"
-            endingLineNumber = "492"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -636,11 +620,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "507"
-            endingLineNumber = "507"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -652,12 +636,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
-            landmarkName = "-createDogBite"
+            startingLineNumber = "519"
+            endingLineNumber = "519"
+            landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -668,11 +652,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "-getAtlasRect:sprite:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "754"
+            endingLineNumber = "754"
+            landmarkName = "-dispTweetRank"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "-createDogStand"
             landmarkType = "5">
          </BreakpointContent>
@@ -684,139 +700,123 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "742"
-            endingLineNumber = "742"
-            landmarkName = "-dispIzaTouch"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "461"
             endingLineNumber = "461"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -828,11 +828,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -844,12 +844,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
-            landmarkName = "-createDogBite"
+            startingLineNumber = "545"
+            endingLineNumber = "545"
+            landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -860,12 +860,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "538"
-            endingLineNumber = "538"
-            landmarkName = "-findUnitPartSpriteByType:"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
+            landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -876,7 +876,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "-createDogLauph"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "506"
@@ -892,11 +908,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -908,11 +924,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -924,43 +940,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "518"
-            endingLineNumber = "518"
-            landmarkName = "-createDogBite"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
-            landmarkName = "-createDogBite"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
@@ -1214,12 +1198,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "526"
-            endingLineNumber = "526"
-            landmarkName = "-createDogBite"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
+            landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1230,12 +1214,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "669"
-            endingLineNumber = "669"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "681"
+            endingLineNumber = "681"
+            landmarkName = "-createEyeFlash:rotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1262,12 +1246,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "668"
-            endingLineNumber = "668"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "680"
+            endingLineNumber = "680"
+            landmarkName = "-createEyeFlash:rotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1294,12 +1278,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "630"
-            endingLineNumber = "630"
-            landmarkName = "-dispTitle"
+            startingLineNumber = "642"
+            endingLineNumber = "642"
+            landmarkName = "-createUnitParts:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1310,28 +1294,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
-            landmarkName = "-createDogLauph"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "-onCheckTweetStatus"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1460,11 +1444,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -1476,12 +1460,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "-setFlagCanTweet:"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1508,11 +1492,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -1524,11 +1508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -1540,12 +1524,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "676"
-            endingLineNumber = "676"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "688"
+            endingLineNumber = "688"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1556,12 +1540,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "683"
-            endingLineNumber = "683"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "695"
+            endingLineNumber = "695"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1572,12 +1556,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "674"
-            endingLineNumber = "674"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "686"
+            endingLineNumber = "686"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1588,12 +1572,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "684"
-            endingLineNumber = "684"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1636,12 +1620,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
-            landmarkName = "-dispTitle"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
+            landmarkName = "-createUnitParts:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1652,12 +1636,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "765"
-            endingLineNumber = "765"
-            landmarkName = "-hideIzaTouch"
+            startingLineNumber = "777"
+            endingLineNumber = "777"
+            landmarkName = "-gameStart"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1668,12 +1652,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "744"
-            endingLineNumber = "744"
-            landmarkName = "-dispIzaTouch"
+            startingLineNumber = "756"
+            endingLineNumber = "756"
+            landmarkName = "-dispTweetRank"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1684,12 +1668,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
-            landmarkName = "-dispIzaTouch"
+            startingLineNumber = "757"
+            endingLineNumber = "757"
+            landmarkName = "-dispTweetRank"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1700,12 +1684,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "754"
-            endingLineNumber = "754"
-            landmarkName = "-dispIzaTouch"
+            startingLineNumber = "766"
+            endingLineNumber = "766"
+            landmarkName = "-dispTweetRank"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1764,12 +1748,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
-            landmarkName = "-onEnter"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1780,12 +1764,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
-            landmarkName = "-onEnter"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1812,12 +1796,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "-createDogStand"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "-onEnter"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1828,11 +1812,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -1940,11 +1924,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "-createDogStand"
             landmarkType = "5">
          </BreakpointContent>
@@ -1956,11 +1940,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "-createDogStand"
             landmarkType = "5">
          </BreakpointContent>
@@ -1972,11 +1956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "410"
-            endingLineNumber = "410"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "-createDogStand"
             landmarkType = "5">
          </BreakpointContent>
@@ -1988,12 +1972,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400301896.865672"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385"
-            landmarkName = "-createDogStand"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "-onEnter"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2018,12 +2002,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "536"
-            endingLineNumber = "536"
-            landmarkName = "-findUnitPartSpriteByType:"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
+            landmarkName = "-createDogLauph"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2034,12 +2018,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401473191.247259"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1197"
-            endingLineNumber = "1197"
-            landmarkName = "-changeResultState"
+            startingLineNumber = "1214"
+            endingLineNumber = "1214"
+            landmarkName = "-biteState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2050,12 +2034,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401473191.247259"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1204"
-            endingLineNumber = "1204"
-            landmarkName = "-changeResultState"
+            startingLineNumber = "1221"
+            endingLineNumber = "1221"
+            landmarkName = "-biteState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2066,12 +2050,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "700"
+            endingLineNumber = "700"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2096,12 +2080,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403752223.422864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "689"
-            endingLineNumber = "689"
-            landmarkName = "-dispTweetRank"
+            startingLineNumber = "701"
+            endingLineNumber = "701"
+            landmarkName = "-dispTitle"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2112,12 +2096,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "872"
-            endingLineNumber = "872"
-            landmarkName = "-readyState:"
+            startingLineNumber = "888"
+            endingLineNumber = "888"
+            landmarkName = "-changeReadyState"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2128,12 +2112,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "400904443.362919"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "811"
-            endingLineNumber = "811"
-            landmarkName = "-clearScoreLogs"
+            startingLineNumber = "824"
+            endingLineNumber = "824"
+            landmarkName = "-dispIzaTouch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2144,12 +2128,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401473191.247259"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1329"
-            endingLineNumber = "1329"
-            landmarkName = "-changeTotalResultState"
+            startingLineNumber = "1346"
+            endingLineNumber = "1346"
+            landmarkName = "-playBiteEffect:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2160,12 +2144,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401301743.278046"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "820"
-            endingLineNumber = "820"
-            landmarkName = "-dispScoreLogs"
+            startingLineNumber = "833"
+            endingLineNumber = "833"
+            landmarkName = "-dispIzaTouch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2208,12 +2192,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401473191.247259"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1258"
-            endingLineNumber = "1258"
-            landmarkName = "-changeResultState"
+            startingLineNumber = "1275"
+            endingLineNumber = "1275"
+            landmarkName = "-dispResultCaption:resultTime:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2224,13 +2208,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401460380.006122"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1072"
-            endingLineNumber = "1072"
-            landmarkName = "-biteState:"
-            landmarkType = "5">
+            startingLineNumber = "1088"
+            endingLineNumber = "1088"
+            landmarkName = "@implementation CCLayerGame"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2240,12 +2224,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401460435.285605"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "991"
-            endingLineNumber = "991"
-            landmarkName = "-cfPlaySigh"
+            startingLineNumber = "1007"
+            endingLineNumber = "1007"
+            landmarkName = "-gameState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2292,12 +2276,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401734132.001048"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1490"
-            endingLineNumber = "1490"
-            landmarkName = "-ccTouchEnded:withEvent:"
+            startingLineNumber = "1507"
+            endingLineNumber = "1507"
+            landmarkName = "-changeTotalResultState"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2308,12 +2292,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401734234.277418"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "842"
-            endingLineNumber = "842"
-            landmarkName = "-dispScoreLogs"
+            startingLineNumber = "856"
+            endingLineNumber = "856"
+            landmarkName = "-hideIzaTouch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2324,12 +2308,522 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChickenRace/Classes/CCLayerGame.m"
-            timestampString = "401767022.780714"
+            timestampString = "403940990.640299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1316"
-            endingLineNumber = "1316"
-            landmarkName = "-dispRetryHome"
+            startingLineNumber = "1333"
+            endingLineNumber = "1333"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
+            landmarkName = "@implementation CCLayerGame"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "584"
+            endingLineNumber = "584"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "591"
+            endingLineNumber = "591"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752223.422864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "592"
+            endingLineNumber = "592"
+            landmarkName = "-createDogBite"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752341.081114"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752378.15452"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752384.258135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
+            landmarkName = "-createDogStand"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403940990.640299"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1515"
+            endingLineNumber = "1515"
+            landmarkName = "-changeTotalResultState"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752532.590545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752538.198414"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403752588.044852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403830776.078444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "805"
+            endingLineNumber = "805"
+            landmarkName = "-dispIzaTouch"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403863374.259983"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "804"
+            endingLineNumber = "804"
+            landmarkName = "-dispIzaTouch"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403929302.988"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "749"
+            endingLineNumber = "749"
+            landmarkName = "-dispTweetRank"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403929426.516374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "748"
+            endingLineNumber = "748"
+            landmarkName = "-dispTweetRank"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403946568.97337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1222"
+            endingLineNumber = "1222"
+            landmarkName = "-biteState:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CCLayerGame dispResultCaption:resultTime:]"
+                  moduleName = "ChickenRace"
+                  urlString = "file://localhost/Users/ogawam/Projects/DogFight/ChickenRace/Classes/CCLayerGame.m"
+                  timestampString = "403946603.293737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1222"
+                  endingLineNumber = "1222"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CCLayerGame dispResultCaption:resultTime:]"
+                  moduleName = "ChickenRace"
+                  urlString = "file://localhost/Users/ogawam/Projects/DogFight/ChickenRace/Classes/CCLayerGame.m"
+                  timestampString = "403946603.294087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1222"
+                  endingLineNumber = "1222"
+                  offsetFromSymbolStart = "158">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403946712.1777"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1370"
+            endingLineNumber = "1370"
+            landmarkName = "-changeResultState"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403947398.408537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1294"
+            endingLineNumber = "1294"
+            landmarkName = "-playResultFailed:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403947916.019359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1325"
+            endingLineNumber = "1325"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403948075.935278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1321"
+            endingLineNumber = "1321"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403948078.919239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1314"
+            endingLineNumber = "1314"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403948172.523125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1324"
+            endingLineNumber = "1324"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403948173.54067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1323"
+            endingLineNumber = "1323"
+            landmarkName = "-dispBiteEffect"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChickenRace/Classes/CCLayerGame.m"
+            timestampString = "403996138.632159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1331"
+            endingLineNumber = "1331"
+            landmarkName = "-dispBiteEffect"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

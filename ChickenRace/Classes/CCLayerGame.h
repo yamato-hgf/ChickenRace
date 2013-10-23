@@ -42,7 +42,9 @@ typedef enum PartTypes : NSUInteger {
 	BOOL flagCanTweet;
 
 	// ゲーム
-	CCLayer *layerUnit;
+	CCLayer *layerUnitRoot;
+	CCSpriteBatchNode *layerUnit;
+	CCSpriteBatchNode *layerEffect;
 
 	NSMutableArray *unitCtrls;
 
@@ -62,11 +64,15 @@ typedef enum PartTypes : NSUInteger {
 	CCSprite* ccsRetry;
 	CCSprite* ccsNext;
 	CCSprite* ccsHome;
+	CCSprite* ccsResultCaption;
+	float resultCaptionSec;
 
     CCLayerTitle *layerTitle;
     
     CCLayer *cclInfo;
-	CCLayer *cclSpark;
+    CCSpriteBatchNode *cclInfoBatch;
+	CCSpriteBatchNode *cclSpark;
+	bool isDispSpark;
 
 	CCSprite* ccsScoreBack;
 	CCLabelTTF* cclLastScore;
@@ -99,6 +105,7 @@ typedef enum PartTypes : NSUInteger {
 	float scores[NUM_OF_GAMES];
 
 	CCLayer *cclScores;
+	CCSpriteBatchNode *cclScoresBatch;
 
 	enum ResultType {
 		None,
@@ -110,6 +117,8 @@ typedef enum PartTypes : NSUInteger {
 	} resultType;
 
 	NSArray* resultMessages[4];
+	NSDictionary* dogAtlasRects;
+	NSDictionary* uiAtlasRects;
 
 	float biteTimeCount;
 }

@@ -602,6 +602,11 @@ static CCDirector *_sharedDirector = nil;
 	secondsPerFrame_ = (now.tv_sec - lastUpdate_.tv_sec) + (now.tv_usec - lastUpdate_.tv_usec) / 1000000.0f;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 #pragma mark Director - Helper
 
 -(void) createStatsLabel
