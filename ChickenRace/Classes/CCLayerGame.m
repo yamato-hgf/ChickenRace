@@ -25,30 +25,26 @@
 
 @interface ResultData: NSObject {
 @public
-    NSString* jpMsg;
-    NSString* usMsg;
+    NSString* msgId;
     NSString* cloud;
 };
--(NSString*) jpMsg;
--(NSString*) usMsg;
+-(NSString*) msgId;
 -(NSString*) cloud;
 @end
 
 @implementation ResultData
 
--(id) initWithParam:(NSString *)jpMsg_ us:(NSString*)usMsg_ cloud:(NSString*)cloud_
+-(id) initWithParam:(NSString *)msgId_ cloud:(NSString*)cloud_
 {
     self = [super init];
     if (self != nil) {
-        jpMsg = jpMsg_;
-        usMsg = usMsg_;
+        msgId = msgId_;
         cloud = cloud_;
     }
     return self;
 }
 
--(NSString*) jpMsg { return jpMsg; }
--(NSString*) usMsg { return usMsg; }
+-(NSString*) msgId { return msgId; }
 -(NSString*) cloud { return cloud; }
 
 @end
@@ -221,28 +217,49 @@ const float bgmVolume = 0.5f;
 	if( (self=[super init]) ) {
 		instance = self;
 
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
+        NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
+        [defaults setObject:@"-1" forKey:@"highScore"];
+        [ud registerDefaults:defaults];
+
         flagCanTweet = true;
 		resultType = None;
 
         // ask director for the window size
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         float spriteScaleRate = [Utility spriteScaleRate];
+        float screenScaleRate = [Utility screenScaleRate];
 
         resultMessages[0] = [[NSArray alloc] initWithObjects:
-            [[ResultData alloc] initWithParam:@"「ふっ、\nやるじゃねぇか」" us:@"" cloud:@"CLOUD_NORMAL"]
-        ,   [[ResultData alloc] initWithParam:@"「オレはまだ３回の\n変身を残している」" us:@"" cloud:@"CLOUD_NORMAL"]
-        ,   [[ResultData alloc] initWithParam:@"「避けさせて\nやったんだよ」" us:@"" cloud:@"CLOUD_NORMAL"]
+            [[ResultData alloc] initWithParam:@"MessageGood00" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGood01" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGood02" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGood03" cloud:@"CLOUD_SPIKE"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGood04" cloud:@"CLOUD_NORMAL"]
         ,   nil];
         
         resultMessages[1] = [[NSArray alloc] initWithObjects:
-            [[ResultData alloc] initWithParam:@"「おい！\nチートするなよ！」" us:@"" cloud:@"CLOUD_SPIKE"]
-        ,   [[ResultData alloc] initWithParam:@"「見えぬ！\nこの神の目にも！」" us:@"" cloud:@"CLOUD_SPIKE"]
-        ,   [[ResultData alloc] initWithParam:@"「質量を持った\n残像だと・・・！」" us:@"" cloud:@"CLOUD_NORMAL"]
+            [[ResultData alloc] initWithParam:@"MessageGreat00" cloud:@"CLOUD_SPIKE"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGreat01" cloud:@"CLOUD_SPIKE"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGreat02" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGreat03" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageGreat04" cloud:@"CLOUD_NORMAL"]
         ,   nil];
 
         resultMessages[2] = [[NSArray alloc] initWithObjects:
-            [[ResultData alloc] initWithParam:@"「負け犬は帰んな」" us:@"" cloud:@"CLOUD_NORMAL"]
-        ,   [[ResultData alloc] initWithParam:@"「国へ帰るんだな・・・\nオマエにも家族はいるだろう」" us:@"" cloud:@"CLOUD_NORMAL"]
+            [[ResultData alloc] initWithParam:@"MessageMiss00" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageMiss01" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageMiss02" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageMiss03" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessageMiss04" cloud:@"CLOUD_NORMAL"]
+        ,   nil];
+
+        resultMessages[3] = [[NSArray alloc] initWithObjects:
+            [[ResultData alloc] initWithParam:@"MessagePoor00" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessagePoor01" cloud:@"CLOUD_NORMAL"]
+        ,   [[ResultData alloc] initWithParam:@"MessagePoor02" cloud:@"CLOUD_SPIKE"]
+        ,   [[ResultData alloc] initWithParam:@"MessagePoor03" cloud:@"CLOUD_SPIKE"]
+        ,   [[ResultData alloc] initWithParam:@"MessagePoor04" cloud:@"CLOUD_NORMAL"]
         ,   nil];
 
         dogAtlasRects = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -262,8 +279,8 @@ const float bgmVolume = 0.5f;
             [NSValue valueWithCGRect:CGRectMake(513,769,388,254)], @"DOG_HEAD_VITE", 
             [NSValue valueWithCGRect:CGRectMake(129,641,110,175)], @"DOG_TAIL", 
             [NSValue valueWithCGRect:CGRectMake(1537,1,454,52)], @"FLASH", 
-            [NSValue valueWithCGRect:CGRectMake(1025,513,139,257)], @"SPARK01", 
-            [NSValue valueWithCGRect:CGRectMake(1281,513,400,400)], @"SPARK02", 
+            [NSValue valueWithCGRect:CGRectMake(1025,513,216,256)], @"SPARK01", 
+            [NSValue valueWithCGRect:CGRectMake(257,641,221,235)], @"SPARK02", 
             nil
         ];
 
@@ -282,7 +299,7 @@ const float bgmVolume = 0.5f;
             [NSValue valueWithCGRect:CGRectMake(1,1857,327,100)], @"START_BUTTON",
             [NSValue valueWithCGRect:CGRectMake(1537,641,88,88)], @"TWEET_BUTTON",
             [NSValue valueWithCGRect:CGRectMake(1025,1409,587,259)], @"WIN",
-            [NSValue valueWithCGRect:CGRectMake(1025,897,628,485)], @"TITLE_LOGO",
+            [NSValue valueWithCGRect:CGRectMake(1025,897,684,484)], @"TITLE_LOGO",
             [NSValue valueWithCGRect:CGRectMake(1281,641,240,110)], @"TOUCH",
             nil
         ];
@@ -311,6 +328,7 @@ const float bgmVolume = 0.5f;
 
         layerUnitRoot = [CCLayer node];
         layerUnitRoot.anchorPoint = ccp(0.5f,0);
+        layerUnitRoot.scale = [self calcDogScale];
         [self addChild: layerUnitRoot];
 
         layerUnit = [CCSpriteBatchNode batchNodeWithFile:@"Dog/dogAtlas.png"];
@@ -322,17 +340,17 @@ const float bgmVolume = 0.5f;
         [self addChild: layerEffect];
 
         cclInfoBatch = [CCSpriteBatchNode batchNodeWithFile:@"UI/uiAtlas.png"];
-        [self addChild:cclInfoBatch];
+        [self addChild:cclInfoBatch z:2];
 
         cclInfo = [CCLayer node];
-        [self addChild:cclInfo];
+        [self addChild:cclInfo z:2];
 
         [self clearScoreLogs];
 
         cclSpark = [CCSpriteBatchNode batchNodeWithFile:@"Dog/dogAtlas.png"];
-        [self addChild: cclSpark z:5];
+        [self addChild: cclSpark z:1];
 
-        IAdLayer *adLayer = [IAdLayer nodeWithOrientation:kAdOrientationPortrait
+      IAdLayer *adLayer = [IAdLayer nodeWithOrientation:kAdOrientationPortrait
                                                  position:kAdPositionTop];
         
         [self addChild:adLayer z:20];
@@ -351,10 +369,11 @@ const float bgmVolume = 0.5f;
 -(CGRect) getAtlasRect: (NSDictionary*)dictionary sprite:(NSString*)key
 {
     CGRect result = [[dictionary valueForKey:key] CGRectValue];
-    result.origin.x = result.origin.x / 2;
-    result.origin.y = result.origin.y / 2;
-    result.size.width = result.size.width / 2;
-    result.size.height = result.size.height / 2;
+    float rate = [Utility scaleFactor];
+    result.origin.x = result.origin.x * rate;
+    result.origin.y = result.origin.y * rate;
+    result.size.width = result.size.width * rate;
+    result.size.height = result.size.height * rate;
     return result;
 }
 
@@ -368,42 +387,9 @@ const float bgmVolume = 0.5f;
  
     [accountStore requestAccessToAccountsWithType:twitterAccountType  // 追加
                             withCompletionHandler:^(BOOL granted, NSError *error)  // 追加
-     { // 追加
-         if (!granted) { // 追加
-             NSLog(@"ユーザーがアクセスを拒否しました。"); // 追加
-         }else{ // 追加
-             NSLog(@"ユーザーがアクセスを許可しました。"); // 追加
-         } // 追加
-     }]; // 追加
-#if 0
-    /* iOS5以降の場合にアカウント情報変更通知を受ける。 */
-    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0f)  {
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onCheckTweetStatus) name:ACAccountStoreDidChangeNotification object:nil];
-        [self performSelector:@selector(onCheckTweetStatus)];
-    }    
-#endif
+     {}]; // 追加
+
     [self dispTitle];
-}
-
--(void) setFlagCanTweet:(BOOL)flag
-{
-    flagCanTweet = flag;
-}
-
-- (void) onCheckTweetStatus
-{
-    /* ツイート可能かどうかをチェックする。 */
-    if ([TWTweetComposeViewController canSendTweet]) {
-        /* ここでツイート可能判定時の処理を記述する。ボタンの有効化や可視化など。*/
-//        [self setFlagCanTweet:YES];
-//        [self.btTweet setAlpha:1.0f];
-    }
-    else  {
-        /* ここでツイート不可判定時の処理を記述する。ボタンの無効化や不可視化など。 */
-//         [self setFlagCanTweet:NO];
-//         [self.btTweet setAlpha:0.3f];
-    }
 }
 
 - (void) createDogStand
@@ -700,6 +686,7 @@ const float bgmVolume = 0.5f;
 
     title_logo.position = pos;
     title_logo.scale = scaleBaseSprite;
+    title_logo.anchorPoint = ccp(0.54f,0.5f);
     [title_logo setTextureRect:resRect];
 
     // add the label as a child to this Layer
@@ -730,6 +717,23 @@ const float bgmVolume = 0.5f;
             ] 
         ]
     ];
+
+    pos = CGPointMake(winSize.width/2, [Utility s2w:32]);
+    int highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
+    if(highScore >= 0) {
+        CCLabelTTF* cclHs = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Top Score %d micro sec", highScore] fontName:@"Arial Rounded MT Bold" fontSize:32];
+        cclHs.position = pos;
+        cclHs.scale = [Utility screenScaleRate];
+        [cclInfo addChild:cclHs];
+
+        CCSprite* ccsBack = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
+        ccsBack.position = pos;
+        [ccsBack setScaleX:[Utility s2r:2]];
+        [ccsBack setScaleY:[Utility s2r:0.5f]];
+        [ccsBack setOpacity:196];
+        [ccsBack setTextureRect: [self getAtlasRect:uiAtlasRects sprite:@"SCORE_BACK"]];
+        [cclInfoBatch addChild:ccsBack];
+    }
 
     // add the label as a child to this Layer
     [cclInfoBatch addChild: ccsStartButton];
@@ -776,6 +780,7 @@ const float bgmVolume = 0.5f;
     ccsRankingButton = NULL;
     [self unschedule:@selector(playResultFailed:)];
     [cclInfo removeAllChildrenWithCleanup:YES];
+    [cclInfo setPosition:ccp(0,0)];
     [cclInfoBatch removeAllChildrenWithCleanup:YES];
     [cclInfoBatch setPosition:ccp(0,0)];
     ccsIza = nil;
@@ -783,13 +788,16 @@ const float bgmVolume = 0.5f;
     // ask director for the window size
     CGSize winSize = [[CCDirector sharedDirector] winSize];
  	float spriteScaleRate = [Utility spriteScaleRate];
+    float screenScaleRate = [Utility screenScaleRate];
 
  	[self createDogStand];
    
+    float scale = winSize.width/(768*[Utility scaleFactor]);
 	ccsTutorial = [CCSprite spriteWithFile:@"UI/tutorial.png"];
     CGSize size = [ccsTutorial contentSize];
-    ccsTutorial.position = ccp(winSize.width/2, -[Utility s2w:50] + [Utility s2r:size.height/2]);
-    ccsTutorial.scale = spriteScaleRate;
+    ccsTutorial.position = ccp(winSize.width/2, winSize.height/2 + (size.width/2)*scale);
+    ccsTutorial.anchorPoint = ccp(0.5,1);
+    ccsTutorial.scale = scale;
     [self addChild:ccsTutorial z:2];
 
 	cclFade = [CCLayerColor layerWithColor:ccc4(0,0,0,128)];
@@ -925,33 +933,33 @@ const float dispScoreLogsDelay = 2;
         resSize = resRect.size;
         ccsFrame.position = pos;
         ccsFrame.scale = spriteScaleRate;
-        ccsFrame.opacity = 0;
+//        ccsFrame.opacity = 0;
         [ccsFrame setTextureRect: resRect];
-        [ccsFrame runAction:
-            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
-        ];
+//        [ccsFrame runAction:
+//            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
+//        ];
         [cclScoresBatch addChild:ccsFrame];        
 
         NSString* rounds[] = { @"1st", @"2nd", @"3rd", @"4th", @"5th" };
         CCLabelTTF* cclRound = [CCLabelTTF labelWithString:rounds[i] fontName:@"Arial Rounded MT Bold" fontSize:24];
         cclRound.position = CGPointMake(pos.x - [Utility s2r:resSize.width/2] + [Utility s2w:24], pos.y);
         cclRound.scale = screenScaleRate;
-        cclRound.opacity = 0;
+//        cclRound.opacity = 0;
         [cclRound setAnchorPoint: ccp(0,0.5f)];
-        [cclRound runAction:
-            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
-        ];
+//        [cclRound runAction:
+//            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
+//        ];
         [cclScores addChild:cclRound];
 
         NSString *nssScore = [NSString stringWithFormat:@"%f sec", scores[i]];
         CCLabelTTF* cclScore = [CCLabelTTF labelWithString:nssScore fontName:@"Arial Rounded MT Bold" fontSize:24];
         cclScore.position = CGPointMake(pos.x + [Utility s2r:resSize.width/2] - [Utility s2w:24], pos.y);
         cclScore.scale = screenScaleRate;
-        cclScore.opacity = 0;
+//        cclScore.opacity = 0;
         [cclScore setAnchorPoint: ccp(1,0.5f)];
-        [cclScore runAction:
-            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
-        ];
+//        [cclScore runAction:
+//            [CCFadeIn actionWithDuration:dispScoreLogsDelay/NUM_OF_GAMES*i]
+//        ];
         [cclScores addChild:cclScore];
     }
 }
@@ -966,12 +974,13 @@ const float waitForBiteMax = 3;
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         float spriteScaleRate = [Utility spriteScaleRate];
 
-        ccsFight = [CCSprite spriteWithFile:@"UI/fight.png"];
+        ccsFight = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
         CGPoint pos;
         pos.x = winSize.width/2;
         pos.y = [Utility s2w:infoHeight];
         ccsFight.position = pos;
         ccsFight.scale = [Utility s2r:4.0f];
+        [ccsFight setTextureRect: [self getAtlasRect:uiAtlasRects sprite:@"FIGHT"]];
         [ccsFight runAction: 
             [CCSequence actions:
                 [CCEaseIn actionWithAction:[CCScaleTo actionWithDuration:0.25f scale:spriteScaleRate] rate:2],
@@ -1135,12 +1144,13 @@ const float slowMotionMin = 0.01f;
     rate = pow(rate, 4);
 	rate = min(max(rate, 0), 1);
 
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
 	float zoomRate = min(1, rate / biteZoomTimeRate);
     float scaleFactor = [AppController getScaleFactor];
     float spriteScaleRate = [Utility spriteScaleRate];
     float screenScaleRate = [Utility screenScaleRate];
 
-	[layerUnitRoot setScale: 1 + ((biteDogScale) - 1) * zoomRate];
+	[layerUnitRoot setScale: (1 + (biteDogScale - 1) * zoomRate)* [self calcDogScale]];
     [layerUnitRoot setPosition: ccp(0, (biteDogHeight) * zoomRate)];
 
     CCSprite* sprite = [self findUnitPartSpriteByType:PartTypeHead];
@@ -1153,13 +1163,11 @@ const float slowMotionMin = 0.01f;
 	case None:
 		if(biteTimeCount < biteTimeSec) {
 			if(isTouchEnd) {
-                CGSize winSize = [[CCDirector sharedDirector] winSize];
                 CGPoint pos = CGPointMake(winSize.width/2, [Utility s2w:240] );
                 
                 ccsScoreBack = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
                 ccsScoreBack.position = pos;
                 [ccsScoreBack setScale:spriteScaleRate];
-                [ccsScoreBack setOpacity:196];
                 [ccsScoreBack setTextureRect: [self getAtlasRect:uiAtlasRects sprite:@"SCORE_BACK"]];
                 [cclInfoBatch addChild:ccsScoreBack];
 
@@ -1310,7 +1318,6 @@ const float slowMotionMin = 0.01f;
     cclSpark.position = pos;
     cclSpark.anchorPoint = ccp(0,0);
     cclSpark.rotation = biteAngle;
-    cclSpark.scale = spriteScaleRate;
 
     biteEffSec = 0;
     biteEffRealSec = 0;
@@ -1341,7 +1348,7 @@ const float slowMotionMin = 0.01f;
     if(biteEffSec < 1.f) {
         float rate = (biteEffSec / 1.f);
         float rateEaseOut = 1 - sin(M_PI * (0.5f + 0.5f * rate));
-        effBiteSplash.scale = spriteScaleRate * (1+rateEaseOut);
+        effBiteSplash.scale = spriteScaleRate * (1.5f+rateEaseOut);
         effBiteSplash.opacity = min((int)(255 * (1-rate)), 255);
 
         rate = min(1, biteEffSec / 0.25f);
@@ -1394,18 +1401,18 @@ const float slowMotionMin = 0.01f;
         break;
 
 	case TooFar:
-        resultMessage = resultMessages[2];
-        resultSubMessage = @"円から離れてはいけない！";
+        resultMessage = resultMessages[3];
+        resultSubMessage = NSLocalizedString(@"MessageDontLeaveByCircle", nil);
 	    break;
 
 	case TooFast:
-        resultMessage = resultMessages[2];
-        resultSubMessage = @"ギリギリまで引きつけよう！";
+        resultMessage = resultMessages[3];
+        resultSubMessage = NSLocalizedString(@"MessageTouchUntilBite", nil);
 		break;
 
 	case TooRate:
         resultMessage = resultMessages[2];
-        resultSubMessage = @"噛まれる直前で離そう！";
+        resultSubMessage = NSLocalizedString(@"MessageLeaveAtBite", nil);
 	    break;
     default:
         break;
@@ -1415,7 +1422,7 @@ const float slowMotionMin = 0.01f;
     int index = (int)(CCRANDOM_0_1()* resMsgSize)% resMsgSize;
     ResultData* resData = resultMessage[index];
 
-    float cloudHeight = 600;
+    float cloudHeight = 600 * [self calcDogScale];
     CCSprite* ccsCloud = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
     resRect = [self getAtlasRect:uiAtlasRects sprite:resData->cloud];
     resSize = resRect.size;
@@ -1436,8 +1443,7 @@ const float slowMotionMin = 0.01f;
     ];
     [cclInfoBatch addChild:ccsCloud];
 
-    NSString* resultText = resData->jpMsg;
-    CCLabelTTF* cclMsg = [CCLabelTTF labelWithString:resultText fontName:@"HiraKakuProN-W6" fontSize:40];
+    CCLabelTTF* cclMsg = [CCLabelTTF labelWithString:NSLocalizedString(resData->msgId, nil) fontName:@"HiraKakuProN-W6" fontSize:40];
     cclMsg.position = CGPointMake(winSize.width/2, [Utility s2w:cloudHeight+200]);
     cclMsg.scale = 2 * screenScaleRate;
     cclMsg.color = ccc3(0,0,0);
@@ -1483,23 +1489,21 @@ const float slowMotionMin = 0.01f;
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     float screenScaleRate = [Utility screenScaleRate];
 
-    [self dispScoreLogs:560];
+    [self dispScoreLogs:500];
     [self dispRetryHome];
     [self dispTweetRank];
 
-    // 記録更新
-    [[SimpleAudioEngine sharedEngine] playEffect:SE_NEW_RECORDS];
-
-    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"com.harvest.cr.dog.easy.high.score"];
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:@"topScore"];
 
     float score = 0;
     for(int i = 0; i < NUM_OF_GAMES; ++i)
         if(scores[i] >= 0)
             score += scores[i];
-    scoreReporter.value = score * 1000000;
+    totalScore = 
+    scoreReporter.value = (score * 1000000);
     [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {}]; 
 
-    CGPoint pos = CGPointMake(winSize.width/2, [Utility s2w:480] );
+    CGPoint pos = CGPointMake(winSize.width/2, [Utility s2w:400] );
 
     ccsScoreBack = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
     ccsScoreBack.position = pos;
@@ -1508,16 +1512,28 @@ const float slowMotionMin = 0.01f;
     [ccsScoreBack setTextureRect: [self getAtlasRect:uiAtlasRects sprite:@"SCORE_BACK"]];
     [cclInfoBatch addChild:ccsScoreBack];
     
-    CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:@"トータルスコア" fontName:@"HiraKakuProN-W6" fontSize:48];
+    CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:@"Total Score" fontName:@"HiraKakuProN-W6" fontSize:48];
     cclTotal.position = ccpAdd(pos, ccp(0,[Utility s2w:32]));
     cclTotal.scale = screenScaleRate;
     [cclInfo addChild:cclTotal];    
 
-    cclLastScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f sec", score] fontName:@"Arial Rounded MT Bold" fontSize:64];
+    cclLastScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d micro sec", scoreReporter.value] fontName:@"Arial Rounded MT Bold" fontSize:64];
     cclLastScore.position = ccpAdd(pos, ccp(0,[Utility s2w:-32]));
     cclLastScore.scale = screenScaleRate;
     [cclInfo addChild:cclLastScore];
-    gameCount = 0;   
+
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    int highScore = [ud integerForKey:@"highScore"];
+    if(highScore < 0 || scoreReporter.value < highScore) {
+
+        // 記録更新
+        [[SimpleAudioEngine sharedEngine] playEffect:SE_NEW_RECORDS];
+
+        [ud setInteger:scoreReporter.value forKey:@"highScore"];
+        [ud synchronize];
+    }
+
+//    gameCount = 0;   
 }
 
 // 次へボタンを表示する
@@ -1580,12 +1596,14 @@ const float inputCancelTime = 0.5f;
     [self touchBeganButton:ccsRetry touchLocation:location];
     [self touchBeganButton:ccsHome touchLocation:location];
     [self touchBeganButton:ccsNext touchLocation:location];
-    if([self touchBeganButton:ccsIza touchLocation:location scaling:false]) {
+    if(isDispIzaTouch) {
+        if([self touchBeganButton:ccsIza touchLocation:location scaling:false]) {
 
-        // シンクロ音
-        [[SimpleAudioEngine sharedEngine] playEffect:SE_SYNCHRO];
+            // シンクロ音
+            [[SimpleAudioEngine sharedEngine] playEffect:SE_SYNCHRO];
 
-        [self hideIzaTouch];  
+            [self hideIzaTouch];  
+        }
     }
 
 	isTouchBegan = true;
@@ -1647,6 +1665,13 @@ const float inputCancelTime = 0.5f;
         // スタート音
         [[SimpleAudioEngine sharedEngine] playEffect:SE_BUTTON_START];
 
+        [cclInfo runAction:
+            [CCSequence actions: 
+                [CCDelayTime actionWithDuration:0.1], 
+                [CCEaseIn actionWithAction: [CCMoveBy actionWithDuration:0.5 position:ccp(0, winSize.height*2) ] rate:2 ],
+                nil
+            ]
+        ];
         [cclInfoBatch runAction:
             [CCSequence actions: 
                 [CCDelayTime actionWithDuration:0.1], 
@@ -1654,6 +1679,10 @@ const float inputCancelTime = 0.5f;
                 nil
             ]
         ];
+
+        ccsTweetButton = nil;
+        ccsRankingButton = nil;
+        ccsStartButton = nil;
 
         [self scheduleOnce:@selector(gameStart)delay:0.6];
         return;
@@ -1675,7 +1704,15 @@ const float inputCancelTime = 0.5f;
             TWTweetComposeViewController *vcTweet = [[TWTweetComposeViewController alloc] init];
 
                 /* 初期表示文字列の指定 */
-            [vcTweet setInitialText:[NSString stringWithFormat:@"いぬ "]];
+            if(gameCount < NUM_OF_GAMES) {
+                int highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
+                if(highScore < 0)
+                    [vcTweet setInitialText:[NSString stringWithFormat:NSLocalizedString(@"MessageTweetFirst", nil)]];
+                else [vcTweet setInitialText:[NSString stringWithFormat:NSLocalizedString(@"MessageTweetTitle", nil), highScore]];
+            }
+            else {
+                [vcTweet setInitialText:[NSString stringWithFormat:NSLocalizedString(@"MessageTweetClear", nil), totalScore]];
+            }
 
             /* ツイート結果ハンドラブロック(ツイート送信orキャンセル時の処理をここに記述) */
             [vcTweet setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
@@ -1708,7 +1745,7 @@ const float inputCancelTime = 0.5f;
         [[SimpleAudioEngine sharedEngine] playEffect:SE_BUTTON_DECIDE];
 
         GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-       leaderboardViewController.leaderboardDelegate = [CCLayerGame get];
+        leaderboardViewController.leaderboardDelegate = [CCLayerGame get];
     
         AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
         [[app navController] presentModalViewController:leaderboardViewController animated:YES];
@@ -1724,7 +1761,7 @@ const float inputCancelTime = 0.5f;
         [self hideResult];
         if(gameCount < NUM_OF_GAMES) {
             [background setScale:spriteScaleRate];
-            [layerUnitRoot setScale:1];
+            [layerUnitRoot setScale:[self calcDogScale]];
             [layerUnitRoot setPosition: CGPointZero];            
             [self changeReadyState];  
         }    
@@ -1737,7 +1774,7 @@ const float inputCancelTime = 0.5f;
 
     	[self hideResult];
         [background setScale:spriteScaleRate];
-        [layerUnitRoot setScale:1];
+        [layerUnitRoot setScale:[self calcDogScale]];
         [layerUnitRoot setPosition: CGPointZero];
 		[self changeReadyState];    	
         [self clearScoreLogs];
@@ -1751,7 +1788,7 @@ const float inputCancelTime = 0.5f;
     	[self hideResult];
 		[self createDogStand];
         [background setScale:spriteScaleRate];
-        [layerUnitRoot setScale:1];
+        [layerUnitRoot setScale:[self calcDogScale]];
         [layerUnitRoot setPosition: CGPointZero];
         [self dispTitle];
         [self clearScoreLogs];
@@ -1785,6 +1822,15 @@ const float inputCancelTime = 0.5f;
 {
 	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
 	[[app navController] dismissModalViewControllerAnimated:YES];
+}
+
+-(float) calcDogScale
+{
+    float rate = [Utility screenScaleRate];
+    if(rate > 1)
+        rate = 1 / rate;
+    else rate = 1;
+    return rate;
 }
 
 @end

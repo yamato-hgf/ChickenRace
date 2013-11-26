@@ -15,6 +15,7 @@
 float screenScaleRate_;
 float heightScaleRate_;
 float spriteScaleRate_;
+float scaleFactor_;
 float adBannerHeight_;
 
 + (void) setScreenScaleRate:(float)rate
@@ -35,6 +36,11 @@ float adBannerHeight_;
 	spriteScaleRate_ = rate;
 }
 
++ (void) setScaleFactor:(float)rate
+{
+	scaleFactor_ = rate;
+}
+
 + (void) setAdBannerHeight:(float)pixel
 {
 	adBannerHeight_ = pixel;
@@ -53,6 +59,11 @@ float adBannerHeight_;
 + (float) spriteScaleRate
 {
 	return spriteScaleRate_;
+}
+
++ (float) scaleFactor
+{
+	return scaleFactor_;
 }
 
 + (float) adBannerHeight

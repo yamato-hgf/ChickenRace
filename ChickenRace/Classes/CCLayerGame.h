@@ -120,6 +120,7 @@ typedef enum PartTypes : NSUInteger {
 	NSDictionary* dogAtlasRects;
 	NSDictionary* uiAtlasRects;
 
+	int totalScore;
 	float biteTimeCount;
 }
 

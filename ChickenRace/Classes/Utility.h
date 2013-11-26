@@ -13,10 +13,12 @@
 + (void) setScreenScaleRate:(float)rate;
 + (void) setHeightScaleRate:(float)rate;
 + (void) setSpriteScaleRate:(float)rate;
++ (void) setScaleFactor:(float)rate;
 + (void) setAdBannerHeight:(float)pixel;
 + (float) screenScaleRate;
 + (float) heightScaleRate;
 + (float) spriteScaleRate;
++ (float) scaleFactor;
 + (float) adBannerHeight;
 + (float) s2w:(float)pixel;
 + (float) s2h:(float)pixel;

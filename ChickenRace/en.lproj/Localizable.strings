@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  ChickenRace
+
+  Created by 小川 穣 on 2013/11/03.
+
+*/
+"MessageGood00" = "Ha! good job";
+"MessageGood01" = "I'm not earnest";
+"MessageGood02" = "Is it made such?\nI see";
+"MessageGood03" = "Was it avoided?\nIt failed";
+"MessageGood04" = "It's within\nthe limits of assumption";
+
+"MessageGreat00" = "Wait!\nIs it a cheat?";
+"MessageGreat01" = "It is not visible even if\nit uses the eye of a dog";
+"MessageGreat02" = "The tongue was bit"; 
+"MessageGreat03" = "There was a bit feel";
+"MessageGreat04" = "I thought that it bit";
+
+"MessageMiss00" = "It bit gently"; 
+"MessageMiss01" = "Fe is insufficient";
+"MessageMiss02" = "Next please\nbe medium and burn";
+"MessageMiss03" = "Did you think that\nit did not bite?";
+"MessageMiss04" = "yummy";
+
+"MessagePoor00" = "Loser"; 
+"MessagePoor01" = "Please return to\nan owner's place";
+"MessagePoor02" = "Did you think thatnit bit?";
+"MessagePoor03" = "Weak"; 
+"MessagePoor04" = "It was disappointed";
+
+"MessageDontLeaveByCircle" = "Don't move from a circle!";
+"MessageTouchUntilBite" = "Please do not move until it bites!";
+"MessageLeaveAtBite" = "Please bear, just before being bit!";
+
+"MessageTweetFirst" = "I challenge Dog Fight!! #harvest";
+"MessageTweetTitle" = "Until now, it has the results for %d microseconds in Dog Fight!! #harvest";
+"MessageTweetClear" = "It cleared in only %d microseconds in Dog Fight!! #harvest";

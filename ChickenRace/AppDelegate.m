@@ -21,9 +21,6 @@ float scaleFactor_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //gamecenterのプレイヤーを取得
-   [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){}];
-    
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -42,7 +39,7 @@ float scaleFactor_;
 	director_.wantsFullScreenLayout = YES;
 
 	// Display FSP and SPF
-	[director_ setDisplayStats:YES];
+	[director_ setDisplayStats:NO];
 
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
@@ -67,11 +64,11 @@ float scaleFactor_;
 
 	if(isRetinaDisplay_) {
 		[Utility setSpriteScaleRate:director_.winSize.width/ 320];
-		scaleFactor_ = 0.5f;
+		[Utility setScaleFactor: 0.5f];
 	}
 	else {
 		[Utility setSpriteScaleRate:director_.winSize.width/ 640];
-		scaleFactor_ = 1;
+		[Utility setScaleFactor: 1];
 	}
 //    [director_ setContentScaleFactor: scaleFactor_];
 
@@ -107,6 +104,44 @@ float scaleFactor_;
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+
+    //gamecenterのプレイヤーを取得
+    UIDevice *dev = [UIDevice currentDevice];
+  if(NSOrderedAscending != [[dev systemVersion] compare:@"6.0" options:NSNumericSearch])
+  {
+    // iOS 6
+    GKLocalPlayer* player = [GKLocalPlayer localPlayer];
+    player.authenticateHandler = ^(UIViewController* ui, NSError *error) {
+      if( nil != ui )
+      {
+        [navController_ presentViewController:ui animated:YES completion:nil];
+      }
+      else if( player.isAuthenticated )
+      {
+        // 認証に成功
+      }
+      else
+      {
+        // 認証に失敗
+      }
+    };
+  }
+  else
+  {
+    // iOS 4 or 5
+    GKLocalPlayer* player = [GKLocalPlayer localPlayer];
+    [player authenticateWithCompletionHandler:^(NSError* error)
+    {
+      if( player.isAuthenticated )
+      {
+        // 認証に成功
+      }
+      else
+      {
+        // 認証に失敗
+      }
+    }];
+  }
 
 	return YES;
 }

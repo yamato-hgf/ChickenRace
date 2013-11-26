@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  ChickenRace
+
+  Created by 小川 穣 on 2013/11/03.
+
+*/
+"MessageGood00" = "ふっ・・・やるじゃねぇか";
+"MessageGood01" = "まだ本気じゃないぜ";
+"MessageGood02" = "そうくる？\nふーん、なるほどね";
+"MessageGood03" = "かわされた？うかつ！";
+"MessageGood04" = "想定の範囲内です";
+
+"MessageGreat00" = "え、ちょま・・・\nそれチートだよね？ねぇ！？";
+"MessageGreat01" = "見えぬ！\nこの犬の目にも！";
+"MessageGreat02" = "舌噛んだ・・・";
+"MessageGreat03" = "質量を持った\n残像だというのか・・・！";
+"MessageGreat04" = "噛んだと思ったら避けられていた\n何を言っているかわからn";
+
+"MessageMiss00" = "安心せい、甘噛みだ";
+"MessageMiss01" = "鉄分がたりない";
+"MessageMiss02" = "次はミディアムで\nお願いします";
+"MessageMiss03" = "いつから噛まないと\n錯覚していた？";
+"MessageMiss04" = "おいしいワン";
+
+"MessagePoor00" = "負け犬め";
+"MessagePoor01" = "ハウス\nオマエにも主人がいるだろう";
+"MessagePoor02" = "噛むとでも思ったのかい？\nしねーよ！";
+"MessagePoor03" = "ええい！軟弱者め！";
+"MessagePoor04" = "それでも男ですか";
+
+"MessageDontLeaveByCircle" = "円から離れてはいけない！";
+"MessageTouchUntilBite" = "噛みつくまで引きつけよう！";
+"MessageLeaveAtBite" = "噛まれる直前で離そう！";
+
+"MessageTweetFirst" = "これから挑戦するぜ！『DogFight!!』#harvest";
+"MessageTweetTitle" = "かつて%dマイクロ秒を叩き出した事があってのぉ・・・『DogFight!!』#harvest";
+"MessageTweetClear" = "わずか%dマイクロ秒でクリアしてやったぜ！『DogFight!!』#harvest";
