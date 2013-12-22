@@ -15,19 +15,22 @@
 @implementation CCLayerExtension
 
 -(id)init {
-	ccsTouchBegan = NULL;
+	ccsTouchBegan = nil;
 	return [super init];
 }
 
 // スプライトのタッチ判定用メソッド
 -(CGRect)rectForSprite:(CCSprite *)sprite {
     CGRect rect;
-    if(sprite != NULL) {
+    if(sprite != nil) {
     	float h = [sprite contentSize].height*[Utility spriteScaleRate];
     	float w = [sprite contentSize].width*[Utility spriteScaleRate];
     	float x = sprite.position.x - w/2;
     	float y = sprite.position.y - h/2;
     	rect = CGRectMake(x,y,w,h);
+    }
+    else {
+        rect = CGRectMake( 0, 0, 0, 0 );
     }
     return rect;
 }
@@ -49,7 +52,7 @@
 }
 
 -(bool)touchMovedButton:(CCSprite *)sprite touchLocation:(CGPoint)location {
-    ccsTouchMoved = NULL;
+    ccsTouchMoved = nil;
     if(CGRectContainsPoint([self rectForSprite:sprite], location)) {
         ccsTouchMoved = sprite;
         return true;
@@ -100,7 +103,7 @@
     else if(ccsTouchBegan == sprite) {
     	[ccsTouchBegan resumeSchedulerAndActions];
     	[ccsTouchBegan setScale: [Utility spriteScaleRate]];
-    	ccsTouchBegan = NULL;
+    	ccsTouchBegan = nil;
     }
 	return false;
 }

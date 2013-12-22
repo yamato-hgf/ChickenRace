@@ -74,7 +74,7 @@ const float infoHeight = 640;
 #define DEBUG_FONT_TEST 0
 
 #if DEBUG_FONT_TEST
-CCLabelTTF* testTTF = NULL;
+CCLabelTTF* testTTF = nil;
 int testIndex = 0;
 const char* fonts[] = {
     "AppleGothic",
@@ -721,7 +721,7 @@ const float bgmVolume = 0.5f;
     pos = CGPointMake(winSize.width/2, [Utility s2w:32]);
     int highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
     if(highScore >= 0) {
-        CCLabelTTF* cclHs = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Top Score %d micro sec", highScore] fontName:@"Arial Rounded MT Bold" fontSize:32];
+        CCLabelTTF* cclHs = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Fastest Record %d micro sec", highScore] fontName:@"Arial Rounded MT Bold" fontSize:32];
         cclHs.position = pos;
         cclHs.scale = [Utility screenScaleRate];
         [cclInfo addChild:cclHs];
@@ -777,7 +777,7 @@ const float bgmVolume = 0.5f;
 {
     ccsStartButton = 
     ccsTweetButton = 
-    ccsRankingButton = NULL;
+    ccsRankingButton = nil;
     [self unschedule:@selector(playResultFailed:)];
     [cclInfo removeAllChildrenWithCleanup:YES];
     [cclInfo setPosition:ccp(0,0)];
@@ -817,7 +817,7 @@ const float bgmVolume = 0.5f;
 
     isDispSpark = false;
 
-    if(ccsIza == NULL) {
+    if(ccsIza == nil) {
     	ccsIza = [CCSprite spriteWithFile:@"UI/uiAtlas.png"];
         ccsIza.position = ccp(winSize.width/2, 320 * spriteScaleRate * scaleFactor);
         [ccsIza setTextureRect:[self getAtlasRect:uiAtlasRects sprite:@"IZA"]];
@@ -865,7 +865,7 @@ const float bgmVolume = 0.5f;
         ];
 
     	[cclInfoBatch removeChild:ccsTouch cleanup:YES];
-    	ccsTouch = NULL;
+    	ccsTouch = nil;
     }
 	isDispIzaTouch = FALSE;
 }
@@ -903,7 +903,7 @@ const float bgmVolume = 0.5f;
 // これまでのスコアの表示をクリア
 - (void) clearScoreLogs
 {
-    if(cclScores != NULL)
+    if(cclScores != nil)
         [self removeChild:cclScores cleanup:YES];
     cclScores = [CCLayer node];
     [self addChild:cclScores z:15];    
@@ -1222,7 +1222,7 @@ const float slowMotionMin = 0.01f;
 
 	if(biteTimeCount >= biteWaitTimeSec) {
         [startTime release];
-        startTime = NULL;        
+        startTime = nil;        
         
 		[cclInfo removeChild:cclFade cleanup:YES];
 		[self unschedule:@selector(biteState:)];
@@ -1383,8 +1383,8 @@ const float slowMotionMin = 0.01f;
     timeScale = 1;
     scores[gameCount] = -1;
 
-    NSArray* resultMessage = NULL;
-    NSString* resultSubMessage = NULL;
+    NSArray* resultMessage = nil;
+    NSString* resultSubMessage = nil;
     
 	switch(resultType) {
     case Success:
@@ -1455,7 +1455,7 @@ const float slowMotionMin = 0.01f;
     ];    
     [cclInfo addChild:cclMsg];
 
-    if(resultSubMessage != NULL) {
+    if(resultSubMessage != nil) {
         CCLabelTTF* cclSubMsg = [CCLabelTTF labelWithString:resultSubMessage fontName:@"HiraKakuProN-W6" fontSize:24];
         cclSubMsg.position = CGPointMake(winSize.width-[Utility s2w:64],[Utility s2w:cloudHeight+130]);
         cclSubMsg.scale = screenScaleRate;
@@ -1512,7 +1512,7 @@ const float slowMotionMin = 0.01f;
     [ccsScoreBack setTextureRect: [self getAtlasRect:uiAtlasRects sprite:@"SCORE_BACK"]];
     [cclInfoBatch addChild:ccsScoreBack];
     
-    CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:@"Total Score" fontName:@"HiraKakuProN-W6" fontSize:48];
+    CCLabelTTF* cclTotal = [CCLabelTTF labelWithString:@"Total Record" fontName:@"HiraKakuProN-W6" fontSize:48];
     cclTotal.position = ccpAdd(pos, ccp(0,[Utility s2w:32]));
     cclTotal.scale = screenScaleRate;
     [cclInfo addChild:cclTotal];    
@@ -1626,9 +1626,9 @@ const float inputCancelTime = 0.5f;
 	[cclInfoBatch removeAllChildrenWithCleanup:YES];
     [cclInfo removeAllChildrenWithCleanup:YES];
     ccsIza = nil;
-	ccsHome = NULL;
-    ccsNext = NULL;
-	ccsRetry = NULL;
+	ccsHome = nil;
+    ccsNext = nil;
+	ccsRetry = nil;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
@@ -1641,7 +1641,7 @@ const float inputCancelTime = 0.5f;
 #if DEBUG_FONT_TEST
     if(testTTF) {
         [self removeChild:testTTF cleanup:YES];
-        testTTF = NULL;
+        testTTF = nil;
         int max = sizeof(fonts) / sizeof(fonts[0]);
         if(location.x > winSize.width/2) {
             testIndex++;
